@@ -23,11 +23,6 @@ LOL:AddLabel("QQ：3126295205")
 LOL:AddParagraph("云脚本群聊","云脚本1群号526684389，云脚本2群号")
 LOL：AddLabel（"看你母呢"）
 
-Tab:AddButton({	Name = "反挂机【防检测】",	Callback = function()		print("Anti Afk On")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
- and）
-  and
-}）
-
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
  Icon = "rbxassetid://10888331510", 
