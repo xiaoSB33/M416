@@ -15,8 +15,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 LOL:AddLabel("作者：小心")
-LOL:AddLabel("QQ：168777105")
-LOL:AddParagraph("云脚本群聊","云脚本1群号526684389，云脚本2群号")
+LOL:AddLabel("QQ：114514")
 
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
