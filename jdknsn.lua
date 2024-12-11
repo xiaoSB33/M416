@@ -1,23 +1,22 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
- local Window = 脚本牛逼:MakeWindow({Name = "脚本V1.3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
+ local Window = 大傻逼脚本:MakeWindow({Name = "大SB脚本V1.3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
- Name = "脚本", 
- Content = "欢迎来到脚本！", 
+ Name = "大SB脚本", 
+ Content = "欢迎来到大SB脚本！", 
  Image = "rbxassetid://4483345998", 
  Time = 5 
  })
-
+ 
  local LOL = Window:MakeTab({ 
  Name = "关于", 
  Icon = "rbxassetid://6026568198", 
  PremiumOnly = false 
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
-LOL:AddLabel("作者：小i")
-LOL:AddLabel("QQ：3126295205")
-LOL:AddParagraph("云脚本群聊","云脚本1群号526684389，云脚本2群号")
-LOL：AddLabel（"看你母呢"）
+LOL:AddLabel("作者：神秘人")
+LOL:AddLabel("QQ：114514")
+LOL:AddParagraph("二改过的脚本","如果你是买来的","恭喜你被骗了")
 
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
