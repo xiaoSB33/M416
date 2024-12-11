@@ -21,6 +21,7 @@ LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 LOL:AddLabel("作者：小i")
 LOL:AddLabel("QQ：3126295205")
 LOL:AddParagraph("云脚本群聊","云脚本1群号526684389，云脚本2群号")
+LOL：AddLabel（"看你母呢"）
 
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
