@@ -1,2 +1,2 @@
 setclipboard("3126295205")
-game:GetService("Players").LocalPlayer:Kick("重开吧，老弟")
+game:GetService("Players").LocalPlayer:Kick("我不会做脚本")
