@@ -1,3 +1,7 @@
+--我是从云脚本源码改的呀😷--
+--不要喷我--
+--我不会做脚本--
+
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
  local Window = 脚本牛逼:MakeWindow({Name = "白脚本V1.3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
