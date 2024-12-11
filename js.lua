@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/tree/main/%E4%BA%91%E8%84%9A%E6%9C%AC/UNIVERSAL%20VERSION.LUA", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/https:/xiaoSB33/M416/blob/main/caizhu.lua", true))()
