@@ -352,6 +352,38 @@ end
   	end    
 })
 
+local Tab = Window:MakeTab({
+	Name = "鲨口求生2",
+	Icon = "rbxassetid://6087485864",
+	PremiumOnly = false
+})
+
+Tab:AddDropdown({
+	Name = "免费船只",
+	Default = "1",
+	Options = {"DuckyBoatBeta", "DuckyBoat", "BlueCanopyMotorboat", "BlueWoodenMotorboat", "UnicornBoat", "Jetski", "RedMarlin", "Sloop", "TugBoat", "SmallDinghyMotorboat", "JetskiDonut", "Marlin", "TubeBoat", "FishingBoat", "VikingShip", "SmallWoodenSailboat", "RedCanopyMotorboat", "Catamaran", "CombatBoat", "TourBoat", "Duckmarine", "PartyBoat", "MilitarySubmarine",  "GingerbreadSteamBoat", "Sleigh2022", "Snowmobile", "CruiseShip"},
+	Callback = function(Value)
+local ohString1 = (Value)
+
+game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(ohString1)
+	end    
+})
+
+Tab:AddButton({
+	Name = "自动杀鲨鱼🦈",
+	Callback = function()
+     local CoreGui = game:GetService("StarterGui")
+
+CoreGui:SetCore("SendNotification", {
+    Title = "彩云脚本测试版",
+    Text = "（自动已开启）",
+    Duration = 3, 
+})
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
+  	end    
+})
+
+
 local jyrs = Window:MakeTab({
  Name = '俄亥俄州',
  Icon = 'rbxassetid://7733771891',
