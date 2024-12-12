@@ -20,7 +20,7 @@ LOL:AddLabel("哥，我是从云脚本二改，别喷我啊")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 
 local Tab = Window:MakeTab({ 
- Name = "通用脚本", 
+ Name = "一些散脚本", 
  Icon = "rbxassetid://10888331510", 
  PremiumOnly = false 
  }) 
