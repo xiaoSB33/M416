@@ -56,7 +56,7 @@ windowNameLabel.BackgroundTransparency = 1.000
 windowNameLabel.BorderSizePixel = 0
 windowNameLabel.Size = UDim2.new(1, 0, 0, 20)
 windowNameLabel.Font = Enum.Font.SourceSans
-windowNameLabel.Text = "甩飞脚本"
+windowNameLabel.Text = "心脚本甩飞"
 windowNameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 windowNameLabel.TextSize = 20.000
 
