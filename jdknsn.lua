@@ -439,19 +439,6 @@ CoreGui:SetCore("SendNotification", {
 })
 
 
-local jyrs = Window:MakeTab({
- Name = '俄亥俄州',
- Icon = 'rbxassetid://7733771891',
- PremiumOnly = false
-})
-
-Tab:AddButton({
-	Name = "脚本",
- Callback = function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/III.lua", true))()
-  end
-})
-
 local Tab2 = Window:MakeTab({
 	Name = "工具",
 	Icon = "rbxassetid://12308581351",
