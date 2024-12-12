@@ -559,12 +559,12 @@ LL:AddButton({
 	Callback = function()
       		saveinstance()
   	end    
-}) 
+})
 
 LL:AddButton({
 	Name = "离开游戏",
  Callback = function()
-      		game:Shutdown()
+										game:Shutdown()
   	end    
 })
 
