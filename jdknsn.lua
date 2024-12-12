@@ -351,38 +351,7 @@ while task.wait() do
 end
   	end    
 })
-
-local Tab = Window:MakeTab({
-	Name = "造船寻宝",
-	Icon = "rbxassetid://6087485864",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-	Name = "自动刷金条",
-	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/Lyy77rnr",true))()
-  	end
-})
-
-Tab:AddButton({
-	Name = "工具包",
-	Callback = function()
-	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	
-  	end
-})
-Tab:AddButton({
-	Name = "防止掉线（反挂机）",
-	Callback = function()
-	print("Anti Afk On")
-		local vu = game:GetService("VirtualUser")
-		game:GetService("Players").LocalPlayer.Idled:connect(function()
-		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		   wait(1)
-		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		end)
-  	end
-})
+	
 
 local Tab = Window:MakeTab({
 	Name = "极速传奇",
@@ -436,6 +405,7 @@ Tab:AddButton({
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13098.87109375, 216.83917236328125, 5907.6279296875)    
   	end    
 })
+
 
 local Tab = Window:MakeTab({
 	Name = "鲨口求生2",
