@@ -347,6 +347,26 @@ end
 })
 
 local Tab2 = Window:MakeTab({
+	Name = "监狱专用",
+	Icon = "rbxassetid://12308581351",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "自动抓",
+ Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/getjpog/jailpoggers/main/AutoArrestInstantTP.lua"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "自动抢劫脚本",
+ Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))
+  end
+})
+
+local Tab2 = Window:MakeTab({
 	Name = "工具",
 	Icon = "rbxassetid://12308581351",
 	PremiumOnly = false
