@@ -355,14 +355,14 @@ local Tab2 = Window:MakeTab({
 Tab:AddButton({
 	Name = "自动抓",
  Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/getjpog/jailpoggers/main/AutoArrestInstantTP.lua"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/getjpog/jailpoggers/main/AutoArrestInstantTP.lua"))()
   end
 })
 
 Tab:AddButton({
 	Name = "自动抢劫脚本",
  Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))
   end
 })
 
@@ -385,7 +385,7 @@ Tab2:AddButton({
      mouse = game.Players.LocalPlayer:GetMouse()
                 tool = Instance.new("Tool")
                 tool.RequiresHandle = false
-                tool.Name = "点击传送"
+                tool.Name = "点击即可传送"
                 tool.Activated:connect(function()
                 local pos = mouse.Hit+Vector3.new(0,2.5,0)
                 pos = CFrame.new(pos.X,pos.Y,pos.Z)
