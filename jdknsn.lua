@@ -81,6 +81,13 @@ Tab:AddTextbox({
 })
 
 Tab:AddButton({
+	Name = "北京时间",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/North.lua", true))()
+  end
+})
+
+Tab:AddButton({
 	Name = "旋转",
  Callback = function()
 loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/op.lua", true))()
