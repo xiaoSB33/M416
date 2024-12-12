@@ -15,7 +15,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 LOL:AddLabel("作者：查看qq")
-LOL:AddLabel("QQ：3129265205")
+LOL:AddLabel("QQ：3126295205")
 LOL:AddLabel("哥，我是从云脚本二改，别喷我啊")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 
