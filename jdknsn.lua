@@ -626,6 +626,16 @@ local Section = guis:AddSection({
 })
 
 guis:AddButton({
+	Name = "皮脚本",
+	Callback = function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()     		
+
+guis:AddButton({
+	Name = "Dex V3/云脚本（正式版）",
+	Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/VIP/main/%E4%BA%91%E8%84%9A%E6%9C%AC/UNIVERSAL%20VERSION.LUA", true))()
+
+guis:AddButton({
 	Name = "Dex V3/安全版",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
