@@ -258,6 +258,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "飞行脚本2（可隐藏）",
+	Callback = function()
+          loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/fly.lua", true))()
+  	end    
+})
+
+
+Tab:AddButton({
 	Name = "透视",
 	Callback = function()
       if _G.Reantheajfdfjdgse then
