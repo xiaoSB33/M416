@@ -1,9 +1,9 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
- local Window =   OrionLib:MakeWindow({Name = "心脚本V3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
+ local Window =   OrionLib:MakeWindow({Name = "彩云脚本V3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
- Name = "心脚本", 
- Content = "欢迎来到心脚本！", 
+ Name = "彩云脚本", 
+ Content = "欢迎来到彩云脚本！", 
  Image = "rbxassetid://4483345998", 
  Time = 5 
  })
