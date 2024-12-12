@@ -611,11 +611,9 @@ LL:AddButton({
 
 LL:AddButton({
 	Name = "键盘脚本",
-	Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+	Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
-
 local guis = Window:MakeTab({
 	Name = "脚本大全",
 	Icon = "rbxassetid://6031086173",
