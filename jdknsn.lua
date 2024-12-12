@@ -625,7 +625,6 @@ local guis = Window:MakeTab({
 local Section = guis:AddSection({
 	Name = "通用"
 })
-
 guis:AddButton({
 	Name = "Dex V3/安全版",
 	Callback = function()
@@ -641,7 +640,7 @@ guis:AddButton({
 })
 
 guis:AddButton({
-    Name = "了不起的探险家",
+ Name = "了不起的探险家",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/awesome-explorer/main/source.lua"))()
   	end    
