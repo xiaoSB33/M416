@@ -83,7 +83,7 @@ Tab:AddTextbox({
 Tab:AddButton({
 	Name = "旋转",
  Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+adstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
