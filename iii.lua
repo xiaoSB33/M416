@@ -1,4 +1,3 @@
---fwYF小天破解源码圈钱狗卖十元白名单
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/KuEsRX44')))()
 local Window = OrionLib:MakeWindow({Name = 'YFHUB', HidePremium = false, SaveConfig = true, ConfigFolder = 'OrionTest', IntroText = 'YFHUB BY YF'})
 OrionLib:MakeNotification({
