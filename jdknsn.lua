@@ -1,5 +1,5 @@
-local OrionLib = loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/jdknsn.lua", true))()
- local Window =   OrionLib:MakeWindow({Name = "心脚本V2.2", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
+ local Window =   OrionLib:MakeWindow({Name = "心脚本V3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
  Name = "心脚本", 
