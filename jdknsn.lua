@@ -95,7 +95,7 @@ loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwer.lua", tr
 })
 
 Tab:AddButton({
-	Name = "FE刷99消音器手枪",
+	Name = "FE刷99消音器手枪（会卡）",
  Callback = function()
 loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/FE.lua", true))()
   end
@@ -345,23 +345,6 @@ while task.wait() do
 end
   	end    
 })
-
-local Tab2 = Window:MakeTab({
-	Name = "监狱专用",
-	Icon = "rbxassetid://12308581351",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-	Name = "自动抓",
- Callback = function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/getjpog/jailpoggers/main/AutoArrestInstantTP.lua"))()
-  end
-})
-
-Tab:AddButton({
-	Name = "自动抢劫脚本",
- Callback = function()
  loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))
   end
 })
