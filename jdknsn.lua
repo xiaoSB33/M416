@@ -95,7 +95,7 @@ loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwer.lua", tr
 })
 
 Tab:AddButton({
-	Name = "FE刷99消音器手枪（会卡）",
+	Name = "FE刷99消音器手枪",
  Callback = function()
 loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/FE.lua", true))()
   end
