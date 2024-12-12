@@ -30,13 +30,6 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Value)
 
-Tab:AddButton({
-	Name = "旋转",
- Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-  end
-})
-
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 	end
 })
@@ -84,6 +77,13 @@ Tab:AddTextbox({
 	Callback = function(phh)
 		game.Players.LocalPlayer.Character.Humanoid.HipHeight = phh  
 	end
+})
+
+Tab:AddButton({
+	Name = "旋转",
+ Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+  end
 })
 
 Tab:AddToggle({
