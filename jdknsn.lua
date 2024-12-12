@@ -15,7 +15,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 LOL:AddLabel("作者：小心")
-LOL:AddLabel("QQ：114514")
+LOL:AddLabel("QQ：暂不透露")
 
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
@@ -244,7 +244,7 @@ Char:MoveTo(box.Position + Vector3.new(0,.5,0))
 Tab:AddButton({
 	Name = "飞行脚本可隐藏",
 	Callback = function()
-          loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
+          loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/flight.lua", true))()
   	end    
 })
 
