@@ -563,8 +563,7 @@ LL:AddButton({
 
 LL:AddButton({
 	Name = "离开游戏",
-	Callback = function()
-      		game:Shutdown()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/caizhu.lua", true))()
   	end    
 })
 
