@@ -14,8 +14,9 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  PremiumOnly = false 
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
-LOL:AddLabel("作者：小心")
-LOL:AddLabel("QQ：暂不透露")
+LOL:AddLabel("作者：查看qq")
+LOL:AddLabel("QQ：3129265205")
+LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
