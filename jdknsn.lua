@@ -609,8 +609,6 @@ guis:AddButton({
       		loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qpal.lua", true))()
   	end    
 })
-
-
 local guis = Window:MakeTab({
 	Name = "脚本大全",
 	Icon = "rbxassetid://6031086173",
