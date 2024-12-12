@@ -244,7 +244,7 @@ Char:MoveTo(box.Position + Vector3.new(0,.5,0))
 Tab:AddButton({
 	Name = "飞行脚本可隐藏",
 	Callback = function()
-     loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/flight.lua", true))()
+          loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
   	end    
 })
 
