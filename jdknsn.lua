@@ -611,7 +611,9 @@ LL:AddButton({
 
 LL:AddButton({
 	Name = "键盘脚本",
-	Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+	Callback = function()     
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
 local guis = Window:MakeTab({
@@ -629,7 +631,7 @@ guis:AddButton({
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
   	end    
 })
-
+      		
 guis:AddButton({
 	Name = "Dex v4",
 	Callback = function()
