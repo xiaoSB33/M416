@@ -642,9 +642,9 @@ local Section = guis:AddSection({
 })
 
 guis:AddButton({
-	Name = "Dex V3/安全版",
+	Name = "力量传奇",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+      		loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/yyy.lua", true))()
   	end    
 })
 
