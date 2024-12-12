@@ -361,7 +361,7 @@ local jyrs = Window:MakeTab({
 Tab:AddButton({
 	Name = "脚本",
  Callback = function()
- loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/III.lua", true))()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/III.lua", true))()
   end
 })
 
