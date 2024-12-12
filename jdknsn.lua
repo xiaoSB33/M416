@@ -353,6 +353,91 @@ end
 })
 
 local Tab = Window:MakeTab({
+	Name = "造船寻宝",
+	Icon = "rbxassetid://6087485864",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "自动刷金条",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/Lyy77rnr",true))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "工具包",
+	Callback = function()
+	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	
+  	end
+})
+Tab:AddButton({
+	Name = "防止掉线（反挂机）",
+	Callback = function()
+	print("Anti Afk On")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+  	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "极速传奇",
+	Icon = "rbxassetid://6087485864",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "开启卡宠",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/uR6azdQQ"))()
+	end
+})
+
+
+Tab:AddButton({
+	Name = "自动重生和自动刷等级",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/T9wTL150"))()        
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "传送岛屿"
+})
+
+Tab:AddButton({
+	Name = "返还出生岛",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9682.98828125, 58.87917709350586, 3099.033935546875)      
+  	end    
+})
+
+Tab:AddButton({
+	Name = "白雪城",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9676.138671875, 58.87917709350586, 3782.69384765625)   
+  	end    
+})
+
+Tab:AddButton({
+	Name = "熔岩城",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11054.96875, 216.83917236328125, 4898.62841796875)       
+  	end    
+})
+
+Tab:AddButton({
+	Name = "传奇公路",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13098.87109375, 216.83917236328125, 5907.6279296875)    
+  	end    
+})
+
+local Tab = Window:MakeTab({
 	Name = "鲨口求生2",
 	Icon = "rbxassetid://6087485864",
 	PremiumOnly = false
