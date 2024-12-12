@@ -31,9 +31,9 @@ Tab:AddTextbox({
 	Callback = function(Value)
 
 Tab:AddButton({
-  Name = "旋转",
+		Name = "旋转",
   Callback = function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
