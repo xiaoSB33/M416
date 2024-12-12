@@ -56,7 +56,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
 TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 100, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "飞行脚本"
+TextLabel.Text = "心脚本飞行"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -137,7 +137,7 @@ nowe = false
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
 	Title = "Fly GUI V3";
-	Text = "By me_ozone and Quandale The Dinglish XII#3550";
+	Text = "By 心脚本制作 XII#3550";
 	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
 Duration = 5;
 
