@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Credits";
-                Text ="zhanghuihuihui";
+                Title = "xiaoSB33";
+                Text ="QQ：3129265205";
                 Duration = 2.5;
             })
 -- Gui to Lua
