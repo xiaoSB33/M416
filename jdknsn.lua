@@ -87,6 +87,13 @@ loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
+Tab:AddButton({
+	Name = "草人",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwer.lua", true))()
+  end
+})
+
 Tab:AddToggle({
 	Name = "跳跃",
 	Default = false,
