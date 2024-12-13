@@ -8,9 +8,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  Time = 5 
  })
 
-	FpsLabel.Text = ("北京时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
-end
- 
+
  local LOL = Window:MakeTab({ 
  Name = "关于", 
  Icon = "rbxassetid://6026568198", 
