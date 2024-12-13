@@ -354,17 +354,18 @@ end
 
 
 local Tab = Window:MakeTab({
-	Name = "造船寻宝",
+	Name = "自然灾害",
 	Icon = "rbxassetid://6087485864",
 	PremiumOnly = false
 })
 
 Tab:AddButton({
-	Name = "自动刷金条",
+	Name = "自然灾害脚本",
 	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/Lyy77rnr",true))()
+	loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qaz.lua", true))()
   	end
 })
+
 
 Tab:AddButton({
 	Name = "工具包",
