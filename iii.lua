@@ -1,5 +1,3 @@
---不能用了
-
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/KuEsRX44')))()
 local Window = OrionLib:MakeWindow({Name = 'YFHUB', HidePremium = false, SaveConfig = true, ConfigFolder = 'OrionTest', IntroText = 'YFHUB BY YF'})
 OrionLib:MakeNotification({
