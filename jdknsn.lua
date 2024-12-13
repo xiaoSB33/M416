@@ -354,6 +354,39 @@ end
 
 
 local Tab = Window:MakeTab({
+	Name = "俄亥俄洲",
+	Icon = "rbxassetid://6087485864",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "脚本",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwa.lua", true))()
+  end
+})
+
+
+Tab:AddButton({
+	Name = "工具包",
+	Callback = function()
+	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	
+  	end
+})
+Tab:AddButton({
+	Name = "防止掉线（反挂机）",
+	Callback = function()
+	print("Anti Afk On")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+  	end
+})
+
+
+local Tab = Window:MakeTab({
 	Name = "自然灾害",
 	Icon = "rbxassetid://6087485864",
 	PremiumOnly = false
