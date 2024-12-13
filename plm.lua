@@ -19,7 +19,7 @@ local Speed = 50
 	ScreenGui.Parent = game.CoreGui
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	unfly.Name = "unfly"
+	unfly.Name = "停止"
 	unfly.Parent = ScreenGui
 	unfly.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	unfly.Position = UDim2.new(0.694387913, 0, 0.181818187, 0)
@@ -35,7 +35,7 @@ local Speed = 50
 		HumanoidRP:FindFirstChildOfClass("BodyGyro"):Destroy()
 	end)
 
-	StopFly.Name = "Stop Fly"
+	StopFly.Name = "停止往前"
 	StopFly.Parent = ScreenGui
 	StopFly.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	StopFly.Position = UDim2.new(0.695689976, 0, 0.0213903747, 0)
@@ -50,7 +50,7 @@ local Speed = 50
 		HumanoidRP.Anchored = true
 	end)
 
-	Fly.Name = "Fly"
+	Fly.Name = "开始"
 	Fly.Parent = ScreenGui
 	Fly.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	Fly.Position = UDim2.new(0.588797748, 0, 0.0213903747, 0)
