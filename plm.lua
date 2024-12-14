@@ -1,4 +1,4 @@
-local Speed = 250
+local Speed = 100
 
 	-- Gui to Lua
 	-- Version: 3.2
