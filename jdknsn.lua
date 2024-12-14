@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
- local Window =   OrionLib:MakeWindow({Name = "彩云脚本V6.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
+ local Window =   OrionLib:MakeWindow({Name = "彩云脚本V7.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
  Name = "彩云脚本", 
@@ -20,6 +20,7 @@ LOL:AddLabel("QQ：3126295205")
 LOL:AddLabel("哥，我是从云脚本二改，别喷我啊")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 LOL:AddLabel("如果加载出现错误，请加我的企鹅，进行反馈，谢谢！")
+LOL:AddLabel("7.0增加：力量传奇、忍者传奇")
 LOL:AddLabel("6.0增加：俄亥俄州")
 LOL:AddLabel("5.0增加：更多功能")
 LOL:AddLabel("4.0增加：自然灾害、鲨口求生、自然灾害")
@@ -365,6 +366,39 @@ while task.wait() do
     end
 end
   	end    
+})
+
+
+local Tab = Window:MakeTab({
+	Name = "力量传奇",
+	Icon = "rbxassetid://6087485864",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "脚本",
+	Callback = function()
+	loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/ggg.lua", true))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "工具包",
+	Callback = function()
+	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	
+  	end
+})
+Tab:AddButton({
+	Name = "防止掉线（反挂机）",
+	Callback = function()
+	print("Anti Afk On")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+  	end
 })
 
 
