@@ -201,7 +201,7 @@ u.Image = "rbxassetid://"--图标
 nameLabel.Parent = u
 nameLabel.Size = UDim2.new(1, 0, 1, 0)
 nameLabel.BackgroundTransparency = 1
-nameLabel.Text = "彩云脚本"--昵称
+nameLabel.Text = "展开"--昵称
 nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 nameLabel.TextScaled = true
 nameLabel.Font = Enum.Font.SourceSansBold
@@ -263,8 +263,8 @@ local function XXxL(tab, title, default)
 end
 
 local Window = Library:CreateWindow({
-    Title = "彩云脚本V2",
-    SubTitle = "第二版",
+    Title = "彩云脚本",
+    SubTitle = "爆破版",
     TabWidth = 160,
     Size = UDim2.fromOffset(582, 353),
     Acrylic = true,
@@ -320,7 +320,7 @@ tabs.Main:AddButton({
     Title = "飞行脚本",
     Description = "可隐藏",
     Callback = function()
- loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\90\66\122\99\84\109\49\102\34\41\41\40\41\10")()
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\90\66\122\99\84\109\49\102\34\41\41\40\41\10")()
     end
 })
 
@@ -537,6 +537,14 @@ tabs.ScriptHub:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/vvbnn/main/%E4%B8%81%E4%B8%81%E8%84%9A%E6%9C%AC%E9%98%89%E5%89%B2.txt"))()
     end
 })
+tabs.ScriptHub:AddButton({
+    Title = "彩云脚本",
+    Description = "全缝合",
+    Callback = function()
+        loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/jdknsn.lua", true))()
+    end
+})
+
 tabs.ScriptHub:AddButton({
     Title = "XA脚本",
     Description = "XA Hub",
@@ -983,4 +991,39 @@ Library:Notify({
     Duration = 8
 })
 function range()
-local 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "范围", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+        Name = "  ",
+        Icon = "",
+        PremiumOnly = false
+})
+Tab:AddTextbox({
+        Name = "设置范围",
+        Default = "默认框输入",
+        TextDisappear = true,
+        Callback = function(Value)
+                _G.HeadSize = Value
+    _G.Disabled = true
+
+    game:GetService('RunService').RenderStepped:connect(function()
+        if _G.Disabled then
+            for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
+                if player.Name ~= game:GetService('Players').LocalPlayer.Name then
+                    pcall(function()
+                        local humanoidRootPart = player.Character and player.Character.HumanoidRootPart
+                        if humanoidRootPart then
+                            humanoidRootPart.Size = Vector3.new(_G.HeadSize, _G.HeadSize, _G.HeadSize)
+                            humanoidRootPart.Transparency = 0.7
+                            humanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                            humanoidRootPart.Material = "Neon"
+                            humanoidRootPart.CanCollide = false
+                        end
+                    end)
+                end
+            end
+        end
+    end)
+        end          
+})
+end
