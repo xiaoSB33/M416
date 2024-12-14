@@ -538,6 +538,14 @@ tabs.ScriptHub:AddButton({
     end
 })
 tabs.ScriptHub:AddButton({
+    Title = "彩云脚本",
+    Description = "全缝合",
+    Callback = function()
+        loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/jdknsn.lua", true))()
+    end
+})
+
+tabs.ScriptHub:AddButton({
     Title = "XA脚本",
     Description = "XA Hub",
     Callback = function()
