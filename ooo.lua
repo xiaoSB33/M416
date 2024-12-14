@@ -7,7 +7,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "北风中心-忍者传奇", HidePremium = false, SaveConfig = true, IntroText = "彩云脚本-忍者传奇", ConfigFolder = "BeiFengNinjaLegends"})
+local Window = OrionLib:MakeWindow({Name = "彩云脚本-忍者传奇", HidePremium = false, SaveConfig = true, IntroText = "彩云脚本-忍者传奇", ConfigFolder = "BeiFengNinjaLegends"})
 
 local Back = Window:MakeTab({
 	Name = "彩云脚本",
