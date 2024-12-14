@@ -1,10 +1,3 @@
---[[
-    Stolen and Modified from Infinite Yield by www.reddit.com/user/RBX_Exploiter
- 
-    Press P for Vehicle Fly
-    Press L for Normal Fly
-]]
- 
 FLYING = false
 local Mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 local Players = game:GetService'Players'
