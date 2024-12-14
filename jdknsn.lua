@@ -855,99 +855,6 @@ LL:AddButton({
      loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
-
-tabs.Music:AddParagraph({
-    Title = "音乐",
-    Content = "其他"
-})
-tabs.Music:AddButton({
-    Title = "防空警报",
-    Description = "...",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://792323017"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "义勇军进行曲",
-    Description = "...",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://1845918434"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "彩虹瀑布",
-    Description = "...",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://1837879082"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "Alan Walker - Faded",
-    Description = "推荐音乐",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://466047335"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "Marshmello - Alone",
-    Description = "推荐音乐",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://413514503"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "Luis Fonsi - Despacito",
-    Description = "推荐音乐",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://673605737"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "Ed Sheeran - Shape of You",
-    Description = "推荐音乐",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://1340925286"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
-tabs.Music:AddButton({
-    Title = "Imagine Dragons - Believer",
-    Description = "推荐音乐",
-    Callback = function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://2389193148"
-        sound.Parent = game.Workspace
-        sound:Play()
-    end
-})
-
 local guis = Window:MakeTab({
 	Name = "脚本大全",
 	Icon = "rbxassetid://6031086173",
@@ -1400,6 +1307,98 @@ guis:AddButton({
 	Callback = function()
       		pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
   	end    
+})
+
+tabs.Music:AddParagraph({
+    Title = "音乐",
+    Content = "其他"
+})
+tabs.Music:AddButton({
+    Title = "防空警报",
+    Description = "...",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://792323017"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "义勇军进行曲",
+    Description = "...",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://1845918434"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "彩虹瀑布",
+    Description = "...",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://1837879082"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "Alan Walker - Faded",
+    Description = "推荐音乐",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://466047335"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "Marshmello - Alone",
+    Description = "推荐音乐",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://413514503"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "Luis Fonsi - Despacito",
+    Description = "推荐音乐",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://673605737"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "Ed Sheeran - Shape of You",
+    Description = "推荐音乐",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://1340925286"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
+})
+
+tabs.Music:AddButton({
+    Title = "Imagine Dragons - Believer",
+    Description = "推荐音乐",
+    Callback = function()
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://2389193148"
+        sound.Parent = game.Workspace
+        sound:Play()
+    end
 })
 
  OrionLib:Init()
