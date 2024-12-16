@@ -1,22 +1,22 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 OrionLib:MakeNotification({
-	Name = "云脚本",
-	Content = "正在加载 云脚本-力量传奇",
+	Name = "云中心脚本",
+	Content = "正在加载 云中心脚本-力量传奇",
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "云脚本-力量传奇", HidePremium = false, SaveConfig = true, IntroText = "云脚本-力量传奇", ConfigFolder = "BeiFengMuscleLegends"})
+local Window = OrionLib:MakeWindow({Name = "云中心脚本-力量传奇", HidePremium = false, SaveConfig = true, IntroText = "云中心脚本-力量传奇", ConfigFolder = "BeiFengMuscleLegends"})
 
 local Back = Window:MakeTab({
-	Name = "云脚本",
+	Name = "云中心脚本",
 	Icon = "rbxassetid://14380684950",
 	PremiumOnly = false
 })
 
 Back:AddButton({
-	Name = "返回云脚本",
+	Name = "返回云中心脚本",
 	Callback = function()
 		loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/jdknsn.lua", true))()
 	end
