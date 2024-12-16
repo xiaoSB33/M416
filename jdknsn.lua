@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
- local Window =   OrionLib:MakeWindow({Name = "云中心脚本1.0.6", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
+ local Window =   OrionLib:MakeWindow({Name = "云中心脚本1.6", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
  Name = "云中心脚本", 
@@ -20,13 +20,13 @@ LOL:AddLabel("QQ：3126295205")
 LOL:AddLabel("云中心脚本群号：640304618")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 LOL:AddLabel("如果加载出现错误，请加我的企鹅，进行反馈，谢谢！")
-LOL:AddLabel("1.0.6增加：力量传奇、忍者传奇")
-LOL:AddLabel("1.0.5增加：俄亥俄州")
-LOL:AddLabel("1.0.4增加：更多功能")
-LOL:AddLabel("1.0.3增加：自然灾害、鲨口求生、自然灾害")
-LOL:AddLabel("1.0.2增加：更多功能")
-LOL:AddLabel("1.0.1增加：横空出世")
-LOL:AddLabel("1.0.0增加：增加代码（还没出现脚本）")
+LOL:AddLabel("1.6增加：力量传奇、忍者传奇")
+LOL:AddLabel("1.5增加：俄亥俄州")
+LOL:AddLabel("1.4增加：更多功能")
+LOL:AddLabel("1.3增加：自然灾害、鲨口求生、自然灾害")
+LOL:AddLabel("1.2增加：更多功能")
+LOL:AddLabel("1.1增加：横空出世")
+LOL:AddLabel("1.0增加：增加代码（还没出现脚本）")
 
 local Tab = Window:MakeTab({ 
  Name = "通用脚本", 
