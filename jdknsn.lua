@@ -2,8 +2,8 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  local Window =   OrionLib:MakeWindow({Name = "彩云脚本V7.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
- Name = "云脚本", 
- Content = "欢迎来到云脚本！", 
+ Name = "云", 
+ Content = "欢迎来到云！", 
  Image = "rbxassetid://4483345998", 
  Time = 5 
  })
