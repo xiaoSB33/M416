@@ -16,7 +16,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 LOL:AddLabel("作者：小云")
-LOL:AddLabel("QQ：我也不知道")
+LOL:AddLabel("QQ：3065560594")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 LOL:AddLabel("如果加载出现错误，请加我的企鹅，进行反馈，谢谢！")
 LOL:AddLabel("7.0增加：力量传奇、忍者传奇")
