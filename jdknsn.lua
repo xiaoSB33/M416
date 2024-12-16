@@ -2,8 +2,8 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  local Window =   OrionLib:MakeWindow({Name = "彩云脚本V7.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
   
  OrionLib:MakeNotification({ 
- Name = "彩云脚本", 
- Content = "欢迎来到彩云脚本！", 
+ Name = "云脚本", 
+ Content = "欢迎来到云脚本！", 
  Image = "rbxassetid://4483345998", 
  Time = 5 
  })
@@ -15,18 +15,16 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Xiao
  PremiumOnly = false 
  })
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
-LOL:AddLabel("我的师傅：肖云")
-LOL:AddLabel("作者：保温杯里泡枸杞")
-LOL:AddLabel("QQ：3126295205")
-LOL:AddLabel("哥，我是从云脚本二改，别喷我啊")
+LOL:AddLabel("作者：小云")
+LOL:AddLabel("QQ：我也不知道")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 LOL:AddLabel("如果加载出现错误，请加我的企鹅，进行反馈，谢谢！")
 LOL:AddLabel("7.0增加：力量传奇、忍者传奇")
 LOL:AddLabel("6.0增加：俄亥俄州")
 LOL:AddLabel("5.0增加：更多功能")
 LOL:AddLabel("4.0增加：自然灾害、鲨口求生、自然灾害")
-LOL:AddLabel("3.0增加：更多功能，名字改为彩云脚本")
-LOL:AddLabel("2.0增加：心脚本横空出世")
+LOL:AddLabel("3.0增加：更多功能")
+LOL:AddLabel("2.0增加：横空出世")
 LOL:AddLabel("1.0增加：增加代码（还没出现脚本）")
 
 local Tab = Window:MakeTab({ 
