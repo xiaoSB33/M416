@@ -1169,7 +1169,6 @@ guis:AddButton({
  ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 
- animateCredits()
  --[[
   local Section = Tab:AddSection({ 
  Name = "部分" 
