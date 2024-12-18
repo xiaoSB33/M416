@@ -11,11 +11,6 @@ local Home = Window:MakeTab({
     Icon = 'rbxassetid://7733960981',
     PremiumOnly = false
 })
-local jyrs = Window:MakeTab({
-    Name = '监狱人生',
-    Icon = 'rbxassetid://7733771891',
-    PremiumOnly = false
-})
 local xsdsd = Window:MakeTab({
     Name = '现实的深度',
     Icon = 'rbxassetid://7733771891',
