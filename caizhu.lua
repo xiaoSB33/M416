@@ -1,2 +1,2 @@
 setclipboard("3126295205")
-game:GetService("Players").LocalPlayer:Kick("你已退出")
+game:GetService("Players").LocalPlayer:Kick("roblox管理员检测到你正在修改游戏数据，已将你踢出")
