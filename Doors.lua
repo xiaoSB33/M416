@@ -138,7 +138,7 @@ LatestRoom:GetPropertyChangedSignal("Value"):Connect(function()
         Sound.PlayOnRemove = true
         Sound:Destroy()
         
-        game.StarterGui:SetCore("SendNotification", { Title = "云脚本"; Text = "感谢您使用我的云脚本！" })
+        game.StarterGui:SetCore("SendNotification", { Title = "云中心脚本"; Text = "感谢您使用我的云中心脚本！" })
         return
     end
 end)
