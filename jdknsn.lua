@@ -113,13 +113,6 @@ loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwer.lua", tr
   end
 })
 
-Tab:AddButton({
-        Name = "FE刷99消音器手枪",
- Callback = function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/FE.lua", true))()
-  end
-})
-
 Tab:AddToggle({
         Name = "跳跃",
         Default = false,
@@ -257,14 +250,6 @@ end)
 repeat wait() until Char
 loc = Char.HumanoidRootPart.Position
 Char:MoveTo(box.Position + Vector3.new(0,.5,0))
-          end    
-})
-
-
-Tab:AddButton({
-        Name = "飞行脚本不可隐藏",
-        Callback = function()
-          loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/flight.lua", true))()
           end    
 })
 
