@@ -349,6 +349,20 @@ Tab:AddButton({
 
 
 local Tab = Window:MakeTab({
+        Name = "在披萨店工作",
+        Icon = "rbxassetid://6087485864",
+        PremiumOnly = false
+})
+
+Tab:AddButton({
+        Name = "脚本",
+        Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/dK0SQckm"))()
+          end
+})
+
+
+local Tab = Window:MakeTab({
         Name = "谋杀之谜",
         Icon = "rbxassetid://6087485864",
         PremiumOnly = false
