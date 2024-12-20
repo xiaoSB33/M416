@@ -92,27 +92,6 @@ loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/North.lua", t
   end
 })
 
-Tab:AddButton({
-        Name = "飞车",
- Callback = function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/plm.lua", true))()
-  end
-})
-
-Tab:AddButton({
-        Name = "旋转",
- Callback = function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/op.lua", true))()
-  end
-})
-
-Tab:AddButton({
-        Name = "草人",
- Callback = function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwer.lua", true))()
-  end
-})
-
 Tab:AddToggle({
         Name = "跳跃",
         Default = false,
@@ -254,7 +233,7 @@ Char:MoveTo(box.Position + Vector3.new(0,.5,0))
 })
 
 Tab:AddButton({
-        Name = "飞行脚本2（可隐藏）",
+        Name = "飞行脚本（可隐藏）",
         Callback = function()
           loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/fly.lua", true))()
           end    
