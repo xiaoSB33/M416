@@ -343,12 +343,24 @@ end
 
 
 local Tab = Window:MakeTab({
+        Name = "监狱人生",
+        Icon = "rbxassetid://6087485864",
+        PremiumOnly = false
+})
+
+Tab:AddButton({
+        Name = "脚本",
+        Callback = function() loadstring(game:HttpGet('https://raw.githubusercontent.com/devguy100/PrizzLife/main/Source/release_v0.8.1.lua'))()
+          end
+})
+
+
+local Tab = Window:MakeTab({
         Name = "越狱",
         Icon = "rbxassetid://6087485864",
         PremiumOnly = false
 })
 
-   LOL:AddLabel("SCRIPT_KEY=此处的密钥")
 Tab:AddButton({
         Name = "脚本",
         Callback = function()
