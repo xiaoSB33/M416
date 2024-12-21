@@ -92,6 +92,34 @@ loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/North.lua", t
   end
 })
 
+Tab:AddButton({
+        Name = "飞车",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/plm.lua", true))()
+  end
+})
+
+Tab:AddButton({
+        Name = "旋转",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/op.lua", true))()
+  end
+})
+
+Tab:AddButton({
+        Name = "草人",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/qwer.lua", true))()
+  end
+})
+
+Tab:AddButton({
+        Name = "FE刷99消音器手枪",
+ Callback = function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/FE.lua", true))()
+  end
+})
+
 Tab:AddToggle({
         Name = "跳跃",
         Default = false,
@@ -232,8 +260,16 @@ Char:MoveTo(box.Position + Vector3.new(0,.5,0))
           end    
 })
 
+
 Tab:AddButton({
-        Name = "飞行脚本（可隐藏）",
+        Name = "飞行脚本不可隐藏",
+        Callback = function()
+          loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/flight.lua", true))()
+          end    
+})
+
+Tab:AddButton({
+        Name = "飞行脚本2（可隐藏）",
         Callback = function()
           loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/fly.lua", true))()
           end    
@@ -307,6 +343,21 @@ end
 
 
 local Tab = Window:MakeTab({
+        Name = "越狱",
+        Icon = "rbxassetid://6087485864",
+        PremiumOnly = false
+})
+
+   LOL:AddLabel("SCRIPT_KEY=此处的密钥")
+Tab:AddButton({
+        Name = "脚本",
+        Callback = function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57c3827dc1393b8fcae8ef3e6cb84297.lua"))()
+          end
+})
+
+
+local Tab = Window:MakeTab({
         Name = "造船寻宝",
         Icon = "rbxassetid://6087485864",
         PremiumOnly = false
@@ -344,20 +395,6 @@ Tab:AddButton({
         Name = "脚本",
         Callback = function()
         loadstring(game:HttpGet('https://pastebin.com/raw/wYAxD7n9'))()
-          end
-})
-
-
-local Tab = Window:MakeTab({
-        Name = "在披萨店工作",
-        Icon = "rbxassetid://6087485864",
-        PremiumOnly = false
-})
-
-Tab:AddButton({
-        Name = "脚本",
-        Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/dK0SQckm"))()
           end
 })
 
