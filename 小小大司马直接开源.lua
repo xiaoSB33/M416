@@ -39,8 +39,7 @@ local function HeartbeatUpdate()
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "男童脚本", HidePremium = false, SaveConfig = true,IntroText = "
-男童脚本", ConfigFolder = "男童脚本"})
+local Window = OrionLib:MakeWindow({Name = "男童脚本", HidePremium = false, SaveConfig = true,IntroText = "大司马脚本", ConfigFolder = "大司马脚本"})
 
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用男童脚本"; Text ="欢迎使用男童脚本"; Duration = 4; })
 
@@ -51,7 +50,7 @@ local about = Window:MakeTab({
 
 })
 
-about:AddParagraph("作者大司马"）
+about:AddParagraph("作者男童")
 
 local Tab =Window:MakeTab({
 
@@ -1206,155 +1205,4 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "监狱室内",
 	Callback = function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.2575073242188, 98.95999908447266, 2379.74169921875)
-  	end
-})
-
-Tab:AddButton({
-	Name = "罪犯复活点",
-	Callback = function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
-  	end
-})
-
-Tab:AddButton({
-	Name = "监狱室外",
-	Callback = function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
-  	end
-})
-
-local Tab = Window:MakeTab({
-	Name = "法宝模拟器",
-	Icon = "rbxassetid://7734068321",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "功能"
-})
-
-Tab:AddButton({
-	Name = "法宝自动刷（任何地方）",
-	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/fabao"))()
-  	end
-})
-local Tab = Window:MakeTab({
-  Name = "脚本集(会覆盖)",
-  Icon = "rbxassetid://4483345998",
-  PremiumOnly = false
-})
-Tab:AddButton({
-  Name = "龙脚本",
-  Callback = function()
-    getgenv().long = "龙脚本，加载时间长请耐心"loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\108\121\121\97\105\110\105\47\108\111\110\47\109\97\105\110\47\108\105\115\119\109\34\41\41\40\41")()
-  end
-})
-
-Tab:AddButton({	
-Name = "ato",	
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/atoyayaya/jiaoben/main/jiamilist"))()
-end
-})
-
-Tab:AddButton({
-  Name = "USA（卡密：USA AER）",
-  Callback = function()
-    getgenv().USA="作者莫羽免费请勿倒卖"loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/USA.lua"))()
-  end
-})
-
-Tab:AddButton({
-	Name = "波奇塔自制脚本",
-	Callback = function()
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,113,109,55,76,121,119,82,117})end)())))()
-end
-})    
-Tab:AddButton({
-  Name = "脚本中心",
-  Callback = function()
-    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
-  end
-})
-
-Tab:AddButton({
-  Name = "MSDOORS2.4(纯英文)",
-  Callback = function()
-    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
-  end
-})
-local Tab = Window:MakeTab({
-  Name = "DOORS娱乐十字架(只对自己召唤的怪有用)",
-  Icon = "rbxassetid://4483345998",
-  PremiumOnly = false
-})
-
-Tab:AddButton({
-  Name = "刷怪菜单",
-  Callback = function ()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shuaguai"))()
-  end
-})
-
-Tab:AddButton({
-  Name = "耶稣十字架",
-  Callback = function ()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi2"))()
-  end
-})
-
-Tab:AddButton({
-  Name = "紫光十字架",
-  Callback = function ()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi3"))()
-  end
-})
-
-Tab:AddButton({
-  Name = "万圣节十字架",
-  Callback = function ()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi4"))()
-  end
-})
-
-Tab:AddButton({
-  Name = "普通十字架",
-  Callback = function ()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizizhen"))()
-  end
-})
-local Tab = Window:MakeTab({
-	Name = "FE脚本(英文)",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-	Name = "C00lgui",
-	Callback = function()
-     loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "1x1x1x1",
-	Callback = function()
-     loadstring(game:HttpGet(('https://pastebin.com/raw/JipYNCht'),true))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "变玩家（R6）",
-	Callback = function()
-     loadstring(game:HttpGet("https://pastebin.com/raw/XR4sGcgJ"))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "动画中心",
-	Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))()
-  	end    
-})
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.2575073242188, 98.95
