@@ -39,9 +39,10 @@ local function HeartbeatUpdate()
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "大司马脚本", HidePremium = false, SaveConfig = true,IntroText = "大司马脚本", ConfigFolder = "大司马脚本"})
+local Window = OrionLib:MakeWindow({Name = "男童脚本", HidePremium = false, SaveConfig = true,IntroText = "
+男童脚本", ConfigFolder = "男童脚本"})
 
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用大司马脚本"; Text ="欢迎使用大司马脚本"; Duration = 4; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用男童脚本"; Text ="欢迎使用男童脚本"; Duration = 4; })
 
 local about = Window:MakeTab({
     Name = "功能栏",
@@ -50,14 +51,11 @@ local about = Window:MakeTab({
 
 })
 
-about:AddParagraph("作者QQ群1006551752")
-about:AddParagraph("qq群1006551752")
-about:AddParagraph("作者大司马")
-about:AddParagraph("快手关注XY.大司马")
+about:AddParagraph("作者大司马"）
 
 local Tab =Window:MakeTab({
 
-	Name = "作者QQ群这里",
+	Name = "原作者QQ群这里",
 
 	Icon = "rbxassetid://16060333448",
 
@@ -90,8 +88,8 @@ Tab:AddButton({
 })
 
 OrionLib:MakeNotification({
-	Name = "大司马",
-	Content = "欢迎使用大司马脚本",
+	Name = "男童",
+	Content = "欢迎使用男童脚本",
 	Image = "rbxassetid://16060333448",
 	Time = 2
 
@@ -109,7 +107,7 @@ local Tab = Window:MakeTab({
 
 local Section = Tab:AddSection({
 
-	Name = "大司马创作"
+	Name = "男童创作"
 
 })
 
