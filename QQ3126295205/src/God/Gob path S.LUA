@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/Ul-/raw/Ul（2）.lua", true))()
+local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/SePpsSPZ'))()
  local Window =   OrionLib:MakeWindow({Name = "脚本中心2.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
 
  OrionLib:MakeNotification({ 
@@ -20,9 +20,9 @@ LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
 about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
 LOL:AddLabel("比较重要的通知⚠️部分脚本是英文，请自己翻译⚠️")
-LOL:AddLabel("作者：保温杯里泡枸杞")
-LOL:AddLabel("QQ：3126295205")
-LOL:AddLabel("脚本中心群号：640304618")
+LOL:AddLabel("作者：？")
+LOL:AddLabel("QQ：？")
+LOL:AddLabel("脚本中心群号：？")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 LOL:AddLabel("如果加载出现错误，请进我的脚本中心群，进行反馈，谢谢！")
 LOL:AddLabel("近期的更新通知：添加更多服务器脚本")
