@@ -1,18 +1,3 @@
-local CoreGui = game:GetService("StarterGui")
-
-CoreGui:SetCore("SendNotification", {
-    Title = "你的脚本：脚本中心",
-    Text = "正在加载",
-    Duration = 5, 
-})
-print("反挂机开启")
-		local vu = game:GetService("VirtualUser")
-		game:GetService("Players").LocalPlayer.Idled:connect(function()
-		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		   wait(1)
-		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		end)
-
 local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/SePpsSPZ'))()
  local Window =   OrionLib:MakeWindow({Name = "脚本中心2.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
 
