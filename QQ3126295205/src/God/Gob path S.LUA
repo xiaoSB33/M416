@@ -95,7 +95,7 @@ loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/North.lua", t
 Tab:AddButton({
         Name = "飞车",
  Callback = function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/plm.lua", true))()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/985.lua", true))()
   end
 })
 
