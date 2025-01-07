@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet('https://github.com/xiaoSB33/Ul-/raw/main/Ul%2FUl%EF%BC%882%EF%BC%89.LUA'))()
+local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/SePpsSPZ'))()
  local Window =   OrionLib:MakeWindow({Name = "脚本中心2.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
 
  OrionLib:MakeNotification({ 
