@@ -19,7 +19,7 @@ local XA = Players.LocalPlayer
 LOL:AddLabel("当前服务器ID:" .. game.GameId .. ".")
 LOL:AddLabel("比较重要的通知⚠️部分脚本是英文，请自己翻译⚠️")
 LOL:AddLabel("作者：？")
-LOL:AddLabel("QQ：？")
+LOL:AddLabel("QQ：3126295205")
 LOL:AddLabel("脚本中心群号：？")
 LOL:AddLabel("此脚本永久免费，缝合脚本：如果你是买来的恭喜你被圈了")
 LOL:AddLabel("如果加载出现错误，请进我的脚本中心群，进行反馈，谢谢！")
