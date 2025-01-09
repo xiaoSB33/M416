@@ -1,4 +1,4 @@
-local Notification = loadstring(game:HttpGet(https://githubusercontent.com/wdwvwfw/wos/blob/main/%E6%9A%97%E7%BA%A2%E8%84%9A%E6%9C%AC.lua"))()
+local Notification = loadstring(game:HttpGet(https://pastebin.com/raw/SePpsSPZ"))()
 Notification.Notify("️暗红脚本[旧]", "正在启动", "rbxassetid://10483855823", {
     Duration = 5,       
     Main = {
@@ -232,7 +232,7 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("即将推出...","感谢你的用云脚本")
+Tab:AddParagraph("即将推出...","感谢你的用")
 
 local Tab = Window:MakeTab({
 	Name = "造船寻宝",
