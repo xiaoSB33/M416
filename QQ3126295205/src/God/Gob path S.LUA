@@ -847,6 +847,303 @@ about:Button(
 )
 
 
+local UITab84 = win:Tab("监狱人生",'16060333448')
+
+local about = UITab84:section("『功能』",true)
+    about:Toggle("开启杀戮气场","state",false,function(s)
+States.KillAura = state
+        if state then
+            notifications:notify{
+            Title = "神青脚本",
+            Description = "关闭杀戮气场",
+            Icon = 6031302918,
+            Accept = {
+                Text = "好的",
+                Callback = function()
+                    print("云");print("山");print("清风");print("忍")
+                end
+            },
+            Length = 10
+        }
+            CreateKillPart()
+        else
+            notifications:notify{
+            Title = "神青脚本",
+            Description = "开启杀戮气场",
+            Icon = 6031302918,
+            Accept = {
+                Text = "好的",
+                Callback = function()
+                    print("云");print("山");print("清风");print("忍")
+                end
+            },
+            Length = 10
+        }
+            if Parts[1] and Parts[1].Name == "KillAura" then
+                Parts[1]:Destroy()
+                Parts[1] = nil
+            end
+         end
+        end)
+
+        function CreateKillPart()
+            if Parts[1] then
+             pcall(function()
+                 Parts[1]:Destroy()
+             end)
+             Parts[1] = nil
+        end
+        local Part = Instance.new("Part",plr.Character)
+        local hilight = Instance.new("Highlight",Part)
+        hilight.FillTransparency = 1
+
+        Part.Anchored = true
+        Part.CanCollide = false
+        Part.CanTouch = false
+        Part.Material = Enum.Material.SmoothPlastic
+        Part.Transparency = .98
+        Part.Material = Enum.Material.SmoothPlastic
+        Part.BrickColor = BrickColor.White()
+        Part.Size = Vector3.new(20,2,20)
+        Part.Name = "KillAura"
+        Parts[1] = Part
+        end
+
+        task.spawn(function()
+        repeat task.wait()until plr.Character and char and char:FindFirstChildOfClass("Humanoid")
+
+        if States.KillAura then
+            CreateKillPart()
+        end
+      end)
+
+    game:GetService("RunService").Stepped:Connect(function()
+        if States.KillAura then
+            for i,v in pairs(game.Players:GetPlayers()) do
+                if v ~= game.Players.LocalPlayer then
+                    if (v.Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).magnitude <14 and v.Character.Humanoid.Health >0 then
+                        local args = {
+                            [1] = v
+                        }
+                        for i =1,2 do
+                            task.spawn(function()
+                                game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+                            end)
+                        end
+
+                    end
+                end
+            end
+        end
+end)
+game:GetService("RunService").Stepped:Connect(function()
+        if States.KillAura then
+            for i,v in pairs(game.Players:GetPlayers()) do
+                if v ~= game.Players.LocalPlayer then
+                    if (v.Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).magnitude <14 and v.Character.Humanoid.Health >0 then
+                        local args = {
+                            [1] = v
+                        }
+                        for i =1,2 do
+                            task.spawn(function()
+                                game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+                            end)
+                        end
+
+                    end
+                end
+            end
+        end  
+     end)
+     wait(1)
+about:Toggle("自动杀所有人","text",false,function(state)
+if state then
+                print("Toggle On")
+                isAutoKillRunning = true
+                spawn(AutoKillLoop)
+                spawn(AutoJump) -- Start the automatic jump function
+            else
+                print("Toggle Off")
+                isAutoKillRunning = false
+            end
+end)
+about:Toggle("删除门🚪","text",false,function(state)
+if state then
+        print("Toggle On")
+        for i,v in pairs(workspace.Doors:GetChildren()) do
+             v.Parent = game:service"ReplicatedStorage".nikodoors
+
+        end
+    else
+        print("Toggle Off")
+        for i,v in pairs(game:service"ReplicatedStorage".nikodoors:GetChildren()) do
+            v.Parent = workspace.Doors
+        end
+    end
+end)
+about:Toggle("逮捕所有罪犯", function()
+    wait(0.1)
+        Player = game.Players.LocalPlayer
+        Pcf = Player.Character.HumanoidRootPart.CFrame
+        for i,v in pairs(game.Teams.Criminals:GetPlayers()) do
+                if v.Name ~= Player.Name then
+                        local i = 10
+                        repeat
+                                wait()
+                                i = i-1
+                                game.Workspace.Remote.arrest:InvokeServer(v.Character.HumanoidRootPart)
+                                Player.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
+                        until i == 0
+                end
+        end
+end)
+
+about:Button("变成警察", function()
+workspace.Remote.TeamEvent:FireServer("Bright blue");
+end)
+
+about:Button("变成囚犯", function()
+workspace.Remote.TeamEvent:FireServer("Bright orange");
+end)
+
+local MT = getrawmetatable(game)
+local __namecall = MT.__namecall
+setreadonly(MT, false)
+MT.__namecall = newcclosure(function(self, ...)
+    local Method = getnamecallmethod()
+    if Method == "FindPartOnRay" and not checkcaller() and tostring(getfenv(0).script) == "GunInterface" then
+        local Character = ClosestChar()
+        if Character then
+            return Character.Torso, Character.Torso.Position
+        end
+    end
+
+    return __namecall(self, ...)
+end)
+setreadonly(MT, true)
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+about:Button("无敌模式",function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/LdTVujTA"))()
+end)
+about:Button(
+    "杀死所有人",
+    function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/kXjfpFPh"))()
+    end
+)
+about:Button(
+    "无敌神器（拿上范围秒杀）",
+    function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/mSLiAZHk"))()
+    end
+)
+about:Button(
+    "变钢铁侠",
+    function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/7prijqYH"))()
+    end
+)
+about:Button(
+    "变死神",
+    function()
+        loadstring(game:HttpGet("https://pastebin.com/ewv9bbRp"))()
+    end
+)
+about:Button(
+    "变车模型",
+    function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/zLe3e4BS"))()
+    end
+)
+
+
+about:Button(
+    "PRISONWARE V1.3",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))()
+    end
+)
+about:Button(
+    "红该 脚本",
+    function()
+        loadstring(game:HttpGetAsync("https://pastebin.com/raw/fYMnAEeJ"))()
+        --紅该 脚本--
+    end
+)
+about:Button(
+    "Tiger脚本",
+    function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/h17s3/TIGERADMIN/main/TIGERADMINSCRIPTFREE"), true))(
+
+        )
+    end
+)
+about:Button(
+    "Moon脚本（不知道有什么用）",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeyocutgHAH12/MoonUI-v10-/main/MoonUI%20v10"))()
+    end
+)
+about:Button(
+    "1脚本",
+    function()
+        -- This Script isn't mine credits to the owner.
+        -- Works on krnl,Synapse,Sirhurt And other.
+        loadstring(game:HttpGet("https://pastebin.com/raw/mHfK0Xk4", true))()
+    end
+)
+about:Button(
+    "2脚本",
+    function()
+        getgenv().http_request = http_request or request or (http and http.request) or syn.request
+        repeat
+        until http_request
+        loadstring(
+            http_request(
+                {
+                    Url = "https://raw.githubusercontent.com/alphaalt0409/WEIRDAPPLEBEEPANEL/main/weirdapplebee.lua",
+                    Method = "GET"
+                }
+            ).Body
+        )()
+    end
+)
+
+about:Button(
+    "警卫室",
+    function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            CFrame.new(847.7261352539062, 98.95999908447266, 2267.387451171875)
+    end
+)
+about:Button(
+    "监狱室内",
+    function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            CFrame.new(919.2575073242188, 98.95999908447266, 2379.74169921875)
+    end
+)
+about:Button(
+    "罪犯复活点",
+    function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
+    end
+)
+about:Button(
+    "监狱室外",
+    function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
+    end
+)
+
+
 local Tab = Window:MakeTab({
   Name = "DOORS脚本",
   Icon = "rbxassetid://10983763163",
