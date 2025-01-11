@@ -582,6 +582,271 @@ about:Button("情云同款自瞄可调", function()
 end)
 
 
+    local UITab84 = win:Tab("自然灾害",'16060333448')
+
+local about = UITab84:section("『功能』",true)
+
+about:Button("自动农场胜出", "ToggleInfo", false, function(bool)
+    _G.autowinfarm = bool;
+    while wait(.1) do
+        if _G.autowinfarm == true then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-236, 180, 360, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        end
+end
+end)
+about:Toggle("地图投票用户界面", "t", false, function(Value)
+                plr.PlayerGui.MainGui.MapVotePage.Visible = Value
+        end)
+
+local nextdis
+about:Toggle("预测灾害", "t", false, function(val)
+                nextdis = val
+
+                while wait(1) and nextdis do
+                        local SurvivalTag = plr.Character:FindFirstChild("SurvivalTag")
+                        if SurvivalTag then
+                                if SurvivalTag.Value == "Blizzard" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：暴风雪"
+                                elseif SurvivalTag.Value == "Sandstorm" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：沙尘暴"
+                                elseif SurvivalTag.Value == "Tornado" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：龙卷风"
+                                elseif SurvivalTag.Value == "Volcanic Eruption" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：火山"
+                                elseif SurvivalTag.Value == "Flash Flood" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：洪水"
+                                elseif SurvivalTag.Value == "Deadly Virus" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：病毒"
+                                elseif SurvivalTag.Value == "Tsunami" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：海啸"
+                                elseif SurvivalTag.Value == "Acid Rain" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：酸雨"
+                                elseif SurvivalTag.Value == "Fire" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：火焰"
+                                elseif SurvivalTag.Value == "Meteor Shower" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：流星雨"
+                                elseif SurvivalTag.Value == "Earthquake" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：地震"
+                                elseif SurvivalTag.Value == "Thunder Storm" and nextdis then
+                                        Message.Visible = true
+                                        Message.Text = "下一个灾难是：暴风雨"
+                                else
+                                        Message.Visible = false
+                                end
+                        end
+                end
+        end)
+
+about:Toggle("地图投票用户界面", "Map Voting UI", false, function(bool)
+if bool == false then do game.Players.LocalPlayer.PlayerGui.MainGui.MapVotePage.Visible = false
+    end
+end
+if bool == true then do game.Players.LocalPlayer.PlayerGui.MainGui.MapVotePage.Visible = true
+    end
+end
+end)
+
+about:Toggle("在水上行走", "ToggleInfo", false, function(bool)
+ if bool == false then do game.Workspace.WaterLevel.CanCollide = false
+                            game.Workspace.WaterLevel.Size = Vector3.new(10, 1, 10)
+                        end
+                    end
+                    if bool == true then do game.Workspace.WaterLevel.CanCollide = true
+                            game.Workspace.WaterLevel.Size = Vector3.new(5000, 1, 5000)
+                        end
+                    end
+end)
+
+about:Toggle("游戏岛悬崖碰撞", "Togglelnfo", false, function(bool)
+for i, v in pairs (game.workspace:GetDescendants())do
+                                if v.Name == 'LowerRocks' then
+                                    v.CanCollide = bool
+                                end
+                            end
+end)
+
+about:Toggle("禁用坠落损坏",function()
+local FallDamageScript = (game.Players.LocalPlayer.Character ~= nil) and game.Players.LocalPlayer.Character:FindFirstChild("FallDamageScript") or nil
+                                if FallDamageScript then
+                                FallDamageScript:Destroy()
+                                end
+end)
+
+about:Toggle("自动禁用坠落伤害", "Toggleelnfo", false, function(bool)
+_G.NoFallDamage = bool;
+                            while wait(0.5) do
+                                    if _G.NoFallDamage == true then
+                            local FallDamageScript = (game.Players.LocalPlayer.Character ~= nil) and game.Players.LocalPlayer.Character:FindFirstChild("FallDamageScript") or nil
+                            if FallDamageScript then
+                            FallDamageScript:Destroy()
+                            end end end
+end)
+
+about:Button("打印下一次灾难(/console)",function()
+warn(game.Players.LocalPlayer.Character.SurvivalTag.Value)
+end)
+
+about:Button("移除灾难界面(暴风雪和沙尘暴)",function()
+game.Players.LocalPlayer.PlayerGui.BlizzardGui:destroy()
+                game.Players.LocalPlayer.PlayerGui.SandStormGui:destroy()
+end)
+
+about:Button("传送到地图",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-115.828506, 65.4863434, 18.8461514, 0.00697017973, 0.0789371505, -0.996855199, -3.13589936e-07, 0.996879458, 0.0789390653, 0.999975681, -0.000549906865, 0.00694845384)
+end)
+
+about:Button("游戏岛",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-83.5, 38.5, -27.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+end)
+
+about:Button("产卵塔",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280, 170, 341, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+about:Button(
+    "自然灾害-高级脚本",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/9NLK7/93qjoadnlaknwldk/main/main"))()
+    end
+)
+about:Button(
+    "黑洞脚本（按E）",
+    function()
+        local UserInputService = game:GetService("UserInputService")
+        local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local Folder = Instance.new("Folder", game:GetService("Workspace"))
+        local Part = Instance.new("Part", Folder)
+        local Attachment1 = Instance.new("Attachment", Part)
+        Part.Anchored = true
+        Part.CanCollide = false
+        Part.Transparency = 1
+        local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+        local NetworkAccess =
+            coroutine.create(
+            function()
+                settings().Physics.AllowSleep = false
+                while game:GetService("RunService").RenderStepped:Wait() do
+                    for _, Players in next, game:GetService("Players"):GetPlayers() do
+                        if Players ~= game:GetService("Players").LocalPlayer then
+                            Players.MaximumSimulationRadius = 0
+                            sethiddenproperty(Players, "SimulationRadius", 0)
+                        end
+                    end
+                    game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+                    setsimulationradius(math.huge)
+                end
+            end
+        )
+        coroutine.resume(NetworkAccess)
+
+        local function EnhanceAndInvinciblePart(part)
+            if
+                part:IsA("Part") and part.Anchored == false and part.Parent:FindFirstChild("Humanoid") == nil and
+                    part.Parent:FindFirstChild("Head") == nil and
+                    part.Name ~= "Handle"
+             then
+                Mouse.TargetFilter = part
+                for _, x in next, part:GetChildren() do
+                    if
+                        x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or
+                            x:IsA("BodyThrust") or
+                            x:IsA("BodyVelocity") or
+                            x:IsA("RocketPropulsion")
+                     then
+                        x:Destroy()
+                    end
+                end
+                if part:FindFirstChild("Attachment") then
+                    part:FindFirstChild("Attachment"):Destroy()
+                end
+                if part:FindFirstChild("AlignPosition") then
+                    part:FindFirstChild("AlignPosition"):Destroy()
+                end
+                if part:FindFirstChild("Torque") then
+                    part:FindFirstChild("Torque"):Destroy()
+                end
+                part.CanCollide = false
+                local Torque = Instance.new("Torque", part)
+                Torque.Torque = Vector3.new(100000, 100000, 100000)
+                local AlignPosition = Instance.new("AlignPosition", part)
+                local Attachment2 = Instance.new("Attachment", part)
+                Torque.Attachment0 = Attachment2
+                AlignPosition.MaxForce = 9999999999999999
+                AlignPosition.MaxVelocity = math.huge
+                AlignPosition.Responsiveness = 200
+                AlignPosition.Attachment0 = Attachment2
+                AlignPosition.Attachment1 = Attachment1
+            end
+        end
+
+        for _, part in next, game:GetService("Workspace"):GetDescendants() do
+            EnhanceAndInvinciblePart(part)
+        end
+
+        game:GetService("Workspace").DescendantAdded:Connect(
+            function(part)
+                EnhanceAndInvinciblePart(part)
+            end
+        )
+        -- 监听按键事件
+        UserInputService.InputBegan:Connect(
+            function(input, isProcessed)
+                if input.KeyCode == Enum.KeyCode.E and not isProcessed then
+                    Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+                end
+            end
+        )
+
+        -- 使用物理引擎移动所有物体
+        spawn(
+            function()
+                while game:GetService("RunService").RenderStepped:Wait() do
+                    Attachment1.WorldCFrame = Updated
+                end
+            end
+        )
+    end
+)
+about:Button(
+    "自然灾害-1脚本",
+    function()
+        loadstring(
+            game:HttpGet(
+                "https://gist.githubusercontent.com/TurkOyuncu99/7c75386107937fa006304efd24543ad4/raw/8d759dfcd95d39949c692735cfdf62baec0bf835/cafwetweg",
+                true
+            )
+        )()
+    end
+)
+about:Button(
+    "自然灾害-2脚本",
+    function()
+        loadstring(
+            game:HttpGet(
+                "https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/    loadstringUjHI6RQpz2o8",
+                true
+            )
+        )()
+    end
+)
+about:Button(
+    "自然灾害-3脚本",
+    function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
+    end
+)
+
+
 local Tab = Window:MakeTab({
   Name = "DOORS脚本",
   Icon = "rbxassetid://10983763163",
