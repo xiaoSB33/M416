@@ -1,3 +1,7 @@
+--[[
+看你妈逼，刁你鸡巴
+]]
+
 local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/SePpsSPZ'))()
  local Window =   OrionLib:MakeWindow({Name = "脚本中心3.0", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
 
