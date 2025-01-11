@@ -342,6 +342,93 @@ end
 })
 
 
+about:Button("汉化阿尔宙斯自瞄",function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/QQ3126295205%2Fsrc%2FGod%2F%E6%B1%89%E5%8C%96%E8%87%AA%E6%8F%8F.lua"))()
+end)
+about:Button("自瞄50",function()
+loadstring(game:HttpGet("https://pastefy.app/b3uXjRF6/raw",true))()
+end)
+
+about:Button("自瞄100",function()
+loadstring(game:HttpGet("https://pastefy.app/tQrd2r0L/raw",true))()
+end)
+
+about:Button("自瞄150",function()
+loadstring(game:HttpGet("https://pastefy.app/UOQWFvGp/raw",true))()
+end)
+
+about:Button("自瞄200",function()
+loadstring(game:HttpGet("https://pastefy.app/b5CuDuer/raw",true))()
+end)
+
+about:Button("自瞄250",function()
+loadstring(game:HttpGet("https://pastefy.app/p2huH7eF/raw",true))()
+end)
+
+about:Button("自瞄300",function()
+loadstring(game:HttpGet("https://pastefy.app/nIyVhrvV/raw",true))()
+end)
+
+about:Button("自瞄350",function()
+loadstring(game:HttpGet("https://pastefy.app/pnjKHMvV/raw",true))()
+end)
+
+about:Button("自瞄400",function()
+loadstring(game:HttpGet("https://pastefy.app/LQuP7sjj/raw",true))()
+end)
+
+about:Button("自瞄600",function()
+loadstring(game:HttpGet("https://pastefy.app/WmcEe2HB/raw",true))()
+end)
+
+about:Button("自瞄全屏",function()
+loadstring(game:HttpGet("https://pastefy.app/n5LhGGgf/raw",true))()
+end)
+
+local UITab84 = win:Tab("范围功能",'16060333448')
+
+local about = UITab84:section("『功能』",true)
+about:Textbox("自定义范围（尽量400以下）", "HitBox", "输入", function(Value)
+   _G.HeadSize = Value
+    _G.Disabled = true 
+   game:GetService('RunService').RenderStepped:connect(function()
+    if _G.Disabled then
+    for i,v in next, game:GetService('Players'):GetPlayers() do
+    if v.Name ~= game:GetService('Players').LocalPlayer.Name then 
+    pcall(function()
+    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) 
+   v.Character.HumanoidRootPart.Transparency = 0.7 
+   v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really red")
+    v.Character.HumanoidRootPart.Material = "Neon"
+    v.Character.HumanoidRootPart.CanCollide = false
+    end)
+    end 
+   end 
+   end
+    end)
+end)
+
+about:Button("范围100", function()
+    _G.HeadSize = 100 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.7 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+end)
+
+about:Button("范围150", function()
+    _G.HeadSize = 150 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.7 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+end)
+
+about:Button("范围200", function()
+    _G.HeadSize = 200 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.7 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+end)
+
+about:Button("范围250", function()
+    _G.HeadSize = 250 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.7 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+end)
+
+about:Button("范围300", function()
+    _G.HeadSize = 300 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.7 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+end)
+
+
 local Tab = Window:MakeTab({ 
  Name = "范围", 
  Icon = "rbxassetid://10888331510", 
