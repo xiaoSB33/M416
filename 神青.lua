@@ -1,6 +1,6 @@
 --[[
 我也就这样罢了，竟然出来了就公开吧，也供新手缝吧
-by 神青]]
+--by 神青]]
 
 local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/odhdshhe/lenglengui/refs/heads/main/JMJMUI.lua"))()        
 local win = ui:new("神青脚本中心V5")
