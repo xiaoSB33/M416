@@ -345,13 +345,6 @@ end
           end    
 })
 
-Tab:AddButton({
-        Name = "阿尔宙斯自瞄",
-        Callback = function()
-          loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/QQ3126295205%2Fsrc%2FGod%2F%E6%B1%89%E5%8C%96%E8%87%AA%E6%8F%8F.lua", true))()
-          end    
-})
-
 
 local Tab = Window:MakeTab({ 
  Name = "范围", 
@@ -3186,31 +3179,6 @@ PrivateProperties = {
 	chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
 
 end
-})
-
-
-local Tab = Window:MakeTab({
-        Name = "河北唐县",
-        Icon = "rbxassetid://6087485864",
-        PremiumOnly = false
-})
-
-local Tab :CreateToggle({
-    Name = "自动刷钱",
-    Value = false,
-    Callback = function(Value)
-        for _,v in pairs(game:GetDescendants()) do
-if v.ClassName == "RemoteEvent" then
-if v.Parent.Name == "WeaponsRemotes" or v.Parent.Name == "VipRemotes" or v.Parent.Name == "Remotes" then
-v:FireServer()
-end
-end
-end
-    end
-})
- MainTab :CreateConsoleAlert({
-    RobberyLocation = "请你先变成身份",
-    RobberyStatus = "送货司机"
 })
 
 
