@@ -6,10 +6,10 @@ function Notify(Title1, Text1, Icon1, Time1)
     Duration = Time1,
   })
 end
-Notify("智狐中心", "作者智狐", "rbxassetid://17360377302", 3)
+Notify("脚本中心", "作者暂不透露", "rbxassetid://17360377302", 3)
 Notify("永久免费", "祝你玩的开心","rbxassetid://17360377302",3)
 Notify("永久免费", "没有盈利","rbxassetid://17360377302",3)
-Notify("智狐中心", "永久免费","rbxassetid://17360377302",3)
+Notify("脚本中心", "永久免费","rbxassetid://17360377302",3)
 Notify("拒绝跑路", "拒绝倒卖","rbxassetid://17360377302",3)
 Notify("启动完成", "祝你玩的开心","rbxassetid://17360377302",5)
 
