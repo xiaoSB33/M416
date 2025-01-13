@@ -117,8 +117,6 @@ bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
 bin:Label("服务器id:"..game.GameId)
 
-about:Label("作者智狐")
-about:Label("作者qq1406324134")
 about:Label("正在努力优化")
 about:Label("请勿倒卖")
 about:Button("复制作者QQ", function()
