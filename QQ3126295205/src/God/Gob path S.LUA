@@ -113,6 +113,9 @@ local QOS = OSQ:section("主要",true)
 local SQO = OSQ:section("其他",true)
 local Tab2 = OSQ:section("传送位置",true)
 
+local QVQ = window:Tab("音乐脚本"，'16060333448')
+local QOQ = window:Tad("主要"，true)
+
 bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
 bin:Label("服务器id:"..game.GameId)
@@ -977,3 +980,8 @@ end)
 Tab2:Button("传送油桶4", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(69.48390197753906, 105.25657653808594, 3434.9033203125)
 end)
+
+QVQ:Button("音乐脚本"，function()
+QOQ:Button("音乐"，fanction()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lyyanai/Music/main/Loader"))()
+end）
