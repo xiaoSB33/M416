@@ -14,7 +14,7 @@ Notify("拒绝跑路", "拒绝倒卖","rbxassetid://17360377302",3)
 Notify("启动完成", "祝你玩的开心","rbxassetid://17360377302",5)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xcmsnd/DrRay-UI-Library/refs/heads/main/61%E7%A0%81.txt"))();		
-local Window = Library:new("智狐中心 ");
+local Window = Library:new("脚本中心 ");
 
 local creds = Window:Tab("公告",'16060333448')
 local bin = creds:section("信息",true)
