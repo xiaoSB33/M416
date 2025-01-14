@@ -113,8 +113,8 @@ local QOS = OSQ:section("主要",true)
 local SQO = OSQ:section("其他",true)
 local Tab2 = OSQ:section("传送位置",true)
 
-local QVQ = window:Tab("音乐脚本"，'16060333448')
-local QOQ = window:Tad("主要"，true)
+local QVQ = window:Tab("音乐脚本",'16060333448')
+local QOQ = QVQ:section("主要",true)
 
 bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
