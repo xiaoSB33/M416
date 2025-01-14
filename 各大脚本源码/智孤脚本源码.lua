@@ -13,7 +13,7 @@ Notify("脚本中心", "永久免费","rbxassetid://17360377302",3)
 Notify("拒绝跑路", "拒绝倒卖","rbxassetid://17360377302",3)
 Notify("启动完成", "祝你玩的开心","rbxassetid://17360377302",5)
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xcmsnd/DrRay-UI-Library/refs/heads/main/61%E7%A0%81.txt"))();                
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xcmsnd/DrRay-UI-Library/refs/heads/main/61%E7%A0%81.txt"))();		
 local Window = Library:new("脚本中心 ");
 
 local creds = Window:Tab("公告",'16060333448')
@@ -112,6 +112,9 @@ local OSQ = Window:Tab("战争大亨",'16060333448')
 local QOS = OSQ:section("主要",true)
 local SQO = OSQ:section("其他",true)
 local Tab2 = OSQ:section("传送位置",true)
+
+local QVQ = window:Tab("音乐脚本",'16060333448')
+local QOQ = QVQ:section("主要",true)
 
 bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
@@ -977,3 +980,8 @@ end)
 Tab2:Button("传送油桶4", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(69.48390197753906, 105.25657653808594, 3434.9033203125)
 end)
+
+QVQ:Button("音乐脚本"，function()
+QOQ:Button("音乐"，fanction()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lyyanai/Music/main/Loader"))()
+end）
