@@ -1,2 +1,2 @@
 setclipboard("fw")
-game:GetService("Players").LocalPlayer:Kick("不好用是吧，c你妈")
+game:GetService("Players").LocalPlayer:Kick("被骗怎么办，受着，认准KEG")
