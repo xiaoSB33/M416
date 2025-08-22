@@ -1,0 +1,1 @@
+for _,v in pairs(game:GetDescendants()) doif v.ClassName == "RemoteEvent" thenif v.Parent.Name == "WeaponsRemotes" or v.Parent.Name == "VipRemotes" or v.Parent.Name == "Remotes" thenv:FireServer()endendend
