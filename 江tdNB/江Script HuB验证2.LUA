@@ -69,7 +69,7 @@ Start.TextWrapped = true
 Start.MouseButton1Click:Connect(function()
     if Key.Text == "Jiang--XiaoXu" then
         ScreenGui:Destroy()
-        这里是你的脚本
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/%E6%B1%9FNB%2F%E6%B1%9FScriptV2.LUA"))()
     else
         game.Players.LocalPlayer:Kick("卡密请看群公告谢谢Q群:1062967540")
     end
