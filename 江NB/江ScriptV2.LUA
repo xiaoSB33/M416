@@ -1760,3 +1760,10 @@ Tab:AddButton({
         loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\80\100\84\55\99\65\82\84"))()
           end
 })
+
+Tab:AddButton({
+        Name = "江脚本V1",
+        Callback = function()
+        getgenv().Xiaojian="江脚本QQ群1062967540" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/%E6%B1%9FtdNB%2F%E6%B1%9FScript%20HUB%E9%AA%8C%E8%AF%81.lua"))()
+          end
+})
