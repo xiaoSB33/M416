@@ -1,7 +1,3 @@
---[[
-禁止出源，出源后果自负
-]]
-
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/JsYb666/UI/refs/heads/main/%E5%BD%A9%E8%99%B9.lua"))()
 
 local Window = library:new("江Script HUB")
@@ -623,6 +619,9 @@ GN:Button("离开游戏", function()
     game:Shutdown()
 end)
 
+OSC:Button("暗红脚本", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/wdwvwfw/wos/refs/heads/main/%E6%B5%8B%E8%AF%95%E5%8D%B7.lua"))()
+end)
 OSC:Button("小凌脚本", function()
     XiaoLing = "小凌中心.Cocoe" loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Xiao-Ling-NEO.UI/main/%E2%82%AA%E5%B0%8F%E5%87%8C%E4%B8%AD%E5%BF%83(%E6%96%B0%E7%89%88ui).txt"))("小凌中心")("作者QQ:1211373508")
 end)
