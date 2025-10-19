@@ -2,7 +2,7 @@
 未经同意禁止出源，否则后果自负
 ]]
 
-local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK", true))()
+local OrionLib = loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/Ul.lua", true))()
  local Window =   OrionLib:MakeWindow({Name = "江脚本V2", HidePremium = false, SaveConfig = false, ConfigFolder = "rbxassetid://6026568198"}) 
 
  OrionLib:MakeNotification({ 
