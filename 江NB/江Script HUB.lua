@@ -100,15 +100,18 @@ local QOS = OSQ:section("主要",true)
 local SQO = OSQ:section("其他",true)
 local Tab2 = OSQ:section("传送位置",true)
 
+local ACP = Window:Tab("彩虹朋友",'94003822271551')
+local ACQ = ACP:section("主要",true)
+
 bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
 bin:Label("服务器id:"..game.GameId)
 
 about:Label("江Script HUB")
 about:Label("主群:1062967540")
-about:Label("作者:XiaoXu-Cynic")
-about:Label("进群发最新脚本")
-about:Label("脚本不想更新")
+about:Label("作者:小江")
+about:Label("进群聊天")
+about:Label("定时更新")
 
 UI:Toggle("移除UI辉光", "DHG", false, function(DHG)
     if DHG then
@@ -970,4 +973,8 @@ Tab2:Button("传送油桶3", function()
 end)
 Tab2:Button("传送油桶4", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(69.48390197753906, 105.25657653808594, 3434.9033203125)
+end)
+
+ACQ:Button("脚本1",function()
+  loadstring(game:HttpGet("https://github.com/wdwvwfw/wos/raw/main/%E5%BD%A9%E8%99%B9%E6%9C%8B%E5%8F%8B.lua"))()
 end)
