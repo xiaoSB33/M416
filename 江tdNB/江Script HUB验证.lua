@@ -72,7 +72,7 @@ submitButton.MouseButton1Click:Connect(function()
         passwordGui:Destroy()  -- 如果密码正确，销毁密码输入界面
         music:Stop() -- 停止音乐播放
         -- 以下是加载并执行外部脚本的代码，不建议在实际中使用，存在风险
-        local scriptContent = game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/%E6%B1%9FNB%2F%E6%B1%9FScript%20HUB.lua")
+        local scriptContent = loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/%E6%B1%9FtdNB%2F%E6%B1%9FScript%20HUB%E9%AA%8C%E8%AF%81.lua"))()
         local func = loadstring(scriptContent)
         if func then
             func()
