@@ -103,7 +103,7 @@ local Tab2 = OSQ:section("传送位置",true)
 local ACP = Window:Tab("彩虹朋友",'94003822271551')
 local ACQ = ACP:section("主要",true)
 
-local ACC = Window:Tab("跳跃点击器",'94003822271551')
+local ACC = Window:Tab("跳跃点击器[自制传送]",'94003822271551')
 local ACD = ACC:section("传送",true)
 
 bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
