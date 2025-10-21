@@ -984,5 +984,5 @@ ACQ:Button("脚本1",function()
 end)
 
 ACD:Button("传送", function()
-  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9896314144134521, 0, 0.1436297595500946)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20507.8105, 45657.7539, 196.650482, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
