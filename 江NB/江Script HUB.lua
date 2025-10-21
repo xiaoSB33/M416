@@ -112,10 +112,10 @@ bin:Label("服务器id:"..game.GameId)
 
 about:Label("江Script HUB")
 about:Label("主群:1062967540")
-about:Label("作者:XiaoXu-Cynic")
+about:Label("作者:小江")
 about:Label("进群发最新脚本")
-about:Label("脚本不想更新")
-about:Label("更新了彩虹朋友")
+about:Label("定时更新")
+about:Label("更新了跳跃点击器")
 
 UI:Toggle("移除UI辉光", "DHG", false, function(DHG)
     if DHG then
