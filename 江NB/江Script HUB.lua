@@ -103,15 +103,19 @@ local Tab2 = OSQ:section("传送位置",true)
 local ACP = Window:Tab("彩虹朋友",'94003822271551')
 local ACQ = ACP:section("主要",true)
 
+local ACC = Window:Tab("跳跃点击器",'94003822271551')
+local ACD = ACC:section("传送",true)
+
 bin:Label("你的用户名:"..game.Players.LocalPlayer.Name)
 bin:Label("你的注入器:"..identifyexecutor())
 bin:Label("服务器id:"..game.GameId)
 
 about:Label("江Script HUB")
 about:Label("主群:1062967540")
-about:Label("作者:小江")
-about:Label("进群聊天")
-about:Label("定时更新")
+about:Label("作者:XiaoXu-Cynic")
+about:Label("进群发最新脚本")
+about:Label("脚本不想更新")
+about:Label("更新了彩虹朋友")
 
 UI:Toggle("移除UI辉光", "DHG", false, function(DHG)
     if DHG then
@@ -977,4 +981,8 @@ end)
 
 ACQ:Button("脚本1",function()
   loadstring(game:HttpGet("https://github.com/wdwvwfw/wos/raw/main/%E5%BD%A9%E8%99%B9%E6%9C%8B%E5%8F%8B.lua"))()
+end)
+
+ACD:Button("传送", function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9896314144134521, 0, 0.1436297595500946)
 end)
