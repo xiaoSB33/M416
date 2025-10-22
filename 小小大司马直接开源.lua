@@ -1,7 +1,6 @@
-local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/SePpsSPZ'))()
-local LBLG = Instance.new("ScreenGui", getParent)
-local LBL = Instance.new("TextLabel", getParent)
-local player = game.Players.LocalPlayer
+ local Version = "1.6.41"
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/download/" .. Version .. "/main.lua"))()
+
 
 LBLG.Name = "LBLG"
 LBLG.Parent = game.CoreGui
@@ -91,7 +90,7 @@ Tab:AddButton({
 
 OrionLib:MakeNotification({
 	Name = "大司马",
-	Content = "欢迎使用大司马脚本",
+	Content = "欢迎使用脚本",
 	Image = "rbxassetid://16060333448",
 	Time = 2
 
