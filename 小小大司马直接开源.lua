@@ -38,9 +38,9 @@ local function HeartbeatUpdate()
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "大司马脚本", HidePremium = false, SaveConfig = true,IntroText = "大司马脚本", ConfigFolder = "大司马脚本"})
+local Window = OrionLib:MakeWindow({Name = "大司马脚本", HidePremium = false, SaveConfig = true,IntroText = "江脚本", ConfigFolder = "江脚本"})
 
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用大司马脚本"; Text ="欢迎使用大司马脚本"; Duration = 4; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用江脚本"; Text ="欢迎使用江脚本"; Duration = 4; })
 
 local about = Window:MakeTab({
     Name = "功能栏",
@@ -49,8 +49,7 @@ local about = Window:MakeTab({
 
 })
 
-about:AddParagraph("作者QQ群1006551752")
-about:AddParagraph("qq群1006551752")
+about:AddParagraph("qq群1062967540")
 about:AddParagraph("作者大司马")
 about:AddParagraph("快手关注XY.大司马")
 
@@ -89,8 +88,8 @@ Tab:AddButton({
 })
 
 OrionLib:MakeNotification({
-	Name = "大司马",
-	Content = "欢迎使用脚本",
+	Name = "",
+	Content = "欢迎使用",
 	Image = "rbxassetid://16060333448",
 	Time = 2
 
