@@ -993,5 +993,5 @@ ACD:Button("传送沙漠", function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30749.3418, 82356.75, 255.45639, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 ACD:Button("传送月亮", function()
-  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5113.7832, 6209.35547, 134.736969, 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 1)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5113.7832, 6209.35547, 134.736969, 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 1)
 end
