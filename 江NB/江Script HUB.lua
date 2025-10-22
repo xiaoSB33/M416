@@ -103,8 +103,7 @@ local Tab2 = OSQ:section("传送位置",true)
 local ACP = Window:Tab("彩虹朋友",'94003822271551')
 local ACQ = ACP:section("主要",true)
 
-local ACC = Window:Tab("跳跃点击器（传送
-自己写的）",'94003822271551')
+local ACC = Window:Tab("跳跃点击器（传送自己写的）",'94003822271551')
 local ACD = ACC:section("传送",true)
 local ACA = ACC:section("公告",true)
 
@@ -990,7 +989,7 @@ ACD:Button("传送新手", function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9860.70801, 8983.50586, -34.8148804, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 ACD:Button("传送月亮", function()
-  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5112.9834, 6209.35547, 133.155762, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5119.94189, 6209.35596, 136.225327, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 ACD:Button("传送黑暗", function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20507.8105, 45657.7539, 196.650482, 1, 0, 0, 0, 1, 0, 0, 0, 1)
