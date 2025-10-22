@@ -112,10 +112,10 @@ bin:Label("服务器id:"..game.GameId)
 
 about:Label("江Script HUB")
 about:Label("主群:1062967540")
-about:Label("作者:小江")
+about:Label("作者:XiaoXu-Cynic")
 about:Label("进群发最新脚本")
-about:Label("定时更新")
-about:Label("更新了跳跃点击器")
+about:Label("脚本不想更新")
+about:Label("更新了彩虹朋友")
 
 UI:Toggle("移除UI辉光", "DHG", false, function(DHG)
     if DHG then
@@ -991,3 +991,6 @@ end)
 ACD:Button("传送沙漠", function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30749.3418, 82356.75, 255.45639, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
+ACD:Button("传送月亮", function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5113.7832, 6209.35547, 134.736969, 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 1)
+end
