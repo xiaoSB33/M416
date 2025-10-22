@@ -982,6 +982,7 @@ end)
 ACQ:Button("脚本1",function()
   loadstring(game:HttpGet("https://github.com/wdwvwfw/wos/raw/main/%E5%BD%A9%E8%99%B9%E6%9C%8B%E5%8F%8B.lua"))()
 end)
+
 ACD:Button("传送新手", function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9860.70801, 8983.50586, -34.8148804, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
