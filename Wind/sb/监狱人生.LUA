@@ -4,7 +4,7 @@
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/JsYb666/UI/refs/heads/main/%E5%BD%A9%E8%99%B9.lua"))()
 
-local Window = library:new("江Script HUB")
+local Window = library:new("空云HUB")
 
 local JYRSt = Window:Tab("监狱人生",'94003822271551')
 local TLT = JYRSt:section("整合",true)
