@@ -303,6 +303,49 @@ The project is primarily written in Lua (Luau), the scripting language used in R
     })
 end
 
+local GameScriptMap = loadstring(game:HttpGet("https://github.com/XiaoYunUwU/XiaoYunUwU/raw/main/Script%2Flib.lua", true))()
+
+local GameNames = {}
+for name in pairs(GameScriptMap) do
+    table.insert(GameNames, name)
+end
+table.sort(GameNames)
+
+local selectedGame
+
+featureServer:Dropdown({
+    Title = "选择服务器",
+    Description = "从列表中选择服务器",
+    Values = GameNames,
+    Callback = function(value)
+        selectedGame = value
+    end
+})
+
+featureServer:Button({
+    Title = "执行脚本",
+    Callback = function()
+        if not selectedGame then
+            WindUI:Notify({
+                Title = "云脚本",
+                Content = "请先选择服务器",
+                Duration = 2
+            })
+            return
+        end
+        
+        WindUI:Notify({
+            Title = "云脚本", 
+            Content = "正在执行："..selectedGame,
+            Duration = 3
+        })
+        
+        pcall(function()
+            loadstring(game:HttpGet(GameScriptMap[selectedGame], true))()
+        end)
+    end
+})
+
 -- */  Elements Section  /* --
 local ElementsSection = Window:Section({
     Title = "Elements",
