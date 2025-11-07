@@ -4,7 +4,7 @@
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/JsYb666/UI/refs/heads/main/%E5%BD%A9%E8%99%B9.lua"))()
 
-local Window = library:new("江Script HUB")
+local Window = library:new("空云HUB")
 
 local ZRZHt = Window:Tab("自然灾害",'94003822271551')
 local ZRZH = ZRZHt:section("自然&灾害",true)
