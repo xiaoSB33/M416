@@ -7,5 +7,5 @@ return {
     ["力量传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E4%BC%A0%E5%A5%87.lua",
     ["跳跃点击器"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E8%B7%B3%E8%B7%83%E7%82%B9%E5%87%BB%E5%99%A8.LUA",
     ["速度传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E9%80%9F%E5%BA%A6%E4%BC%A0%E5%A5%87.lua",
-    ["忍者传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.lua",
+    ["忍者传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.lua"
 }
