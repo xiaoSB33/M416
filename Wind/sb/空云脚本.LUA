@@ -1,42 +1,4 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
-local featureServer = window:Tab({
-    Title = "通用",
-    Icon = "server",
-    Locked = false,
-})
-
-local GameScriptMap = loadstring(game:HttpGet("https://github.com/XiaoYunUwU/XiaoYunUwU/raw/main/Script%2Flib.lua", true))()
-
-local GameNames = {}
-for name in pairs(GameScriptMap) do
-    table.insert(GameNames, name)
-end
-table.sort(GameNames)
-
-local selectedGame
-
-featureServer:Dropdown({
-    Title = "通用所有服务器",
-    Description = "从列表中选取",
-    Values = GameNames,
-    Callback = function(value)
-        selectedGame = value
-    end
-})
-
-featureServer:Button({
-    Title = "执行脚本",
-    Callback = function()
-        if not selectedGame then
-            WindUI:Notify({Title = "空云脚本", Content = "请先选择", Duration = 2})
-            return
-        end
-        
-        WindUI:Notify({Title = "空云脚本", Content = "正在执行："..selectedGame, Duration = 3})
-        pcall(loadstring(game:HttpGet(GameScriptMap[selectedGame], true)))
-    end
-})
-
 local window = WindUI:CreateWindow({
     Title = "空云脚本",
     Icon = "cloud",
