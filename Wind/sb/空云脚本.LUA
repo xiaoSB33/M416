@@ -16,7 +16,7 @@ local window = WindUI:CreateWindow({
 })
 
 local featureServer = window:Tab({
-    Title = "精选服务器",
+    Title = "精选服务器+通用",
     Icon = "server",
     Locked = false,
 })
