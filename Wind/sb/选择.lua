@@ -1,5 +1,6 @@
 return {
     ["飞车"] = "https://github.com/xiaoSB33/M416/raw/main/985.lua",
+    ["防踢出（部分）"] = "https://pastefy.app/J6V4vDz4/raw",
     ["飞行"] = "https://github.com/xiaoSB33/M416/raw/main/fly.lua",
     ["自然灾害"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E8%87%AA%E7%84%B6%E7%81%BE%E5%AE%B3.LUA",
     ["监狱人生"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E7%9B%91%E7%8B%B1%E4%BA%BA%E7%94%9F.LUA",
