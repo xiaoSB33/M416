@@ -8,10 +8,13 @@ local Window = library:new("空云HUB")
 
 local JYRSt = Window:Tab("监狱人生",'94003822271551')
 local TLT = JYRSt:section("整合",true)
+local DC = JYRSt:section("传送地点",true)
 local JYRS = JYRSt:section("监狱&主要",true)
 local DL = JYRSt:section("身份",true)
 local DP = JYRSt:section("其他",true)
 local DX = JYRSt:section("传送地点",true)
+
+DC:Label("可能会被踢出游戏不会被拉黑")
 
 TLT:Button("落叶监狱人生", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/uDs9bhc8"))()
