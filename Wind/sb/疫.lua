@@ -2,8 +2,8 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 
 -- 创建自瞄窗口
 local AimWindow = WindUI:CreateWindow({
-    Title = "自瞄设置",
-    Author = "AimBot脚本",
+    Title = "空云自瞄",
+    Author = "Aim脚本",
     Icon = "crosshair", -- 使用WindUI内置图标
     Folder = "AimConfig",
     Size = UDim2.new(0, 400, 0, 350),
