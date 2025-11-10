@@ -9,6 +9,6 @@ return {
     ["跳跃点击器"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E8%B7%B3%E8%B7%83%E7%82%B9%E5%87%BB%E5%99%A8.LUA",
     ["速度传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E9%80%9F%E5%BA%A6%E4%BC%A0%E5%A5%87.lua",
     ["忍者传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.lua",
-    ["ESP绘制"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2FESP.lua",
-    ["自描"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E7%96%AB.lua",
+    ["ESP绘制（有bug）"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2FESP.lua",
+    ["自瞄（有bug）"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E7%96%AB.lua",
 }
