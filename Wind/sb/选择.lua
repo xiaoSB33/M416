@@ -10,4 +10,5 @@ return {
     ["速度传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E9%80%9F%E5%BA%A6%E4%BC%A0%E5%A5%87.lua",
     ["忍者传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.lua",
     ["ESP绘制"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2FESP.lua",
+    ["自描"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E7%96%AB.lua",
 }
