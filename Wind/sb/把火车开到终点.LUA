@@ -27,24 +27,24 @@ Tab:Button({
 })
 
 Tab:Button({
-    Title = "生成四节火车",
+    Title = "生成矿车",
     Callback = function()
         game:GetService("ReplicatedStorage").SpawnTrenPalanca:FireServer()
         WindUI:Notify({
             Title = "成功",
-            Content = "四节火车已生成",
+            Content = "火车已生成",
             Icon = "check"
         })
     end
 })
 
 Tab:Button({
-    Title = "生成矿车",
+    Title = "生成四节火车",
     Callback = function()
         game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer()
         WindUI:Notify({
             Title = "成功",
-            Content = "矿车已生成",
+            Content = "火车已生成",
             Icon = "check"
         })
     end
