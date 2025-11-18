@@ -93,7 +93,7 @@ Tab:Button({
         while true do game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer() end
         WindUI:Notify({
             Title = "成功",
-            Content = "Expreso火车已生成",
+            Content = "已生成",
             Icon = "check"
         })
     end
