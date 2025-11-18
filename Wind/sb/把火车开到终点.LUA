@@ -66,3 +66,40 @@ Tab:Paragraph({
     Title = "火车生成说明",
     Desc = "点击上方按钮生成不同类型的火车。每个按钮对应一种特定的火车类型。"
 })
+
+local Tab = Window:Tab({
+    Title = "执行秒崩溃",
+    Icon = "train"
+})
+
+Tab:Button({
+    Title = "无限循环生成",
+    Callback = function()
+        while true do
+game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer()
+task.wait()
+end
+        WindUI:Notify({
+            Title = "成功",
+            Content = "土豆服务器熟了",
+            Icon = "check"
+        })
+    end
+})
+
+Tab:Button({
+    Title = "卡死（不推荐）",
+    Callback = function()
+        while true do game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer() end
+        WindUI:Notify({
+            Title = "成功",
+            Content = "Expreso火车已生成",
+            Icon = "check"
+        })
+    end
+})
+
+Tab:Paragraph({
+    Title = "说明",
+    Desc = "弹出276网络错误或者288崩溃了。"
+})
