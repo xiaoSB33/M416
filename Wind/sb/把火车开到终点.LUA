@@ -17,10 +17,22 @@ local Tab = Window:Tab({
 Tab:Button({
     Title = "生成Expreso火车",
     Callback = function()
-        game:GetService("ReplicatedStorage").SpawnTrenExpreso:FireServer()
+        game:GetService("ReplicatedStorage").SpawnTrenFuturista:FireServer()
         WindUI:Notify({
             Title = "成功",
             Content = "Expreso火车已生成",
+            Icon = "check"
+        })
+    end
+})
+
+Tab:Button({
+    Title = "生成列车",
+    Callback = function()
+        game:GetService("ReplicatedStorage").SpawnTrenAve:FireServer()
+        WindUI:Notify({
+            Title = "成功",
+            Content = "列车已生成",
             Icon = "check"
         })
     end
