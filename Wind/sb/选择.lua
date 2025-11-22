@@ -9,7 +9,8 @@ return {
     ["跳跃点击器"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E8%B7%B3%E8%B7%83%E7%82%B9%E5%87%BB%E5%99%A8.LUA",
     ["速度传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E9%80%9F%E5%BA%A6%E4%BC%A0%E5%A5%87.lua",
     ["忍者传奇"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.lua",
-    ["ESP绘制"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2FESP.lua",
     ["自描"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E7%96%AB.lua",
     ["把火车开到终点"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E6%8A%8A%E7%81%AB%E8%BD%A6%E5%BC%80%E5%88%B0%E7%BB%88%E7%82%B9.LUA",
+    ["森林中的99夜"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F99%E5%A4%9C.LUA",
+    ["在披萨店工作"] = "https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E5%9C%A8%E6%8A%AB%E8%90%A8%E5%BA%97%E5%B7%A5%E4%BD%9C.LUA",
 }
