@@ -21,7 +21,7 @@ local Window = WindUI:CreateWindow({
   HasOutline = true,
 })
 Window:EditOpenButton({
-  Title = "开启",
+  Title = "鱼 - 空云脚本",
   Color = ColorSequence.new(Color3.fromHex("2C2C2C"), Color3.fromHex("FFFFFF")),
   HoverColor = ColorSequence.new(Color3.fromHex("1A1A1A"), Color3.fromHex("D9D9D9")),
   PressedColor = ColorSequence.new(Color3.fromHex("000000"), Color3.fromHex("BFBFBF")),
@@ -33,7 +33,6 @@ Window:EditOpenButton({
   TextSize = 18,
   Size = UDim2.new(0.7, 0, 0.12, 0),
   Position = UDim2.new(0.15, 0, 0.85, 0),
-  Icon = "rbxassetid://1070643268",
   IconSize = 24,
   ShadowColor = Color3.fromRGB(0, 0, 0),
   ShadowTransparency = 0.5,
