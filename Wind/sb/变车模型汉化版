@@ -2,8 +2,7 @@ local Translations = {
 ["FE Car gui"] = "空云脚本 - 变车",
 ["Animation"] = "第",
 ["Previous"] = "上一个",
-["Next"] = "下一个",
-["Here key"] = "在此输入密钥"
+["Next"] = "下一个"
 }
 
 local keys = {}
