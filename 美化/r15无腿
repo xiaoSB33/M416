@@ -1,0 +1,40 @@
+-- R15美化无腿
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function R15_BeautifyLegless()
+    local character = player.Character
+    if not character then
+        character = player.CharacterAdded:Wait()
+    end
+    
+    local leftLegParts = {"LeftUpperLeg", "LeftLowerLeg", "LeftFoot"}
+    local rightLegParts = {"RightUpperLeg", "RightLowerLeg", "RightFoot"}
+    
+    local leftLegExists = character:FindFirstChild("LeftUpperLeg")
+    
+    if leftLegExists then
+        for _, partName in ipairs(leftLegParts) do
+            local part = character:FindFirstChild(partName)
+            if part then
+                part.Transparency = 1
+                part.CanCollide = false
+            end
+        end
+    else
+        for _, partName in ipairs(rightLegParts) do
+            local part = character:FindFirstChild(partName)
+            if part then
+                part.Transparency = 1
+                part.CanCollide = false
+            end
+        end
+    end
+end
+
+-- 执行R15美化无腿
+R15_BeautifyLegless()
+player.CharacterAdded:Connect(function()
+    wait(1)
+    R15_BeautifyLegless()
+end)
