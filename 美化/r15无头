@@ -1,0 +1,48 @@
+-- R15美化无头（修复版 - 移除头盔和饰品）
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function R15_BeautifyHeadless()
+    local character = player.Character
+    if not character then
+        character = player.CharacterAdded:Wait()
+    end
+    
+    local head = character:FindFirstChild("Head")
+    if head then
+        -- 移除头部所有装饰
+        for _, child in ipairs(head:GetChildren()) do
+            if child:IsA("Decal") or child:IsA("WrapTarget") or child:IsA("Part") then
+                child:Destroy()
+            end
+        end
+        
+        -- 移除角色中可能作为头盔的配件
+        for _, accessory in ipairs(character:GetChildren()) do
+            if accessory:IsA("Accessory") then
+                local handle = accessory:FindFirstChild("Handle")
+                if handle then
+                    for _, attachment in ipairs(handle:GetChildren()) do
+                        if attachment:IsA("Attachment") then
+                            local headAttachment = head:FindFirstChild(attachment.Name)
+                            if headAttachment then
+                                accessory:Destroy()
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
+        head.Transparency = 1
+        head.CanCollide = false
+    end
+end
+
+-- 执行R15美化无头
+R15_BeautifyHeadless()
+player.CharacterAdded:Connect(function()
+    wait(1)
+    R15_BeautifyHeadless()
+end)
