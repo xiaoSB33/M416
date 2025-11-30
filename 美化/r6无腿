@@ -1,0 +1,34 @@
+-- R6美化无腿
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function R6_BeautifyLegless()
+    local character = player.Character
+    if not character then
+        character = player.CharacterAdded:Wait()
+    end
+    
+    local leftLeg = character:FindFirstChild("Left Leg")
+    local rightLeg = character:FindFirstChild("Right Leg")
+    
+    if leftLeg then
+        leftLeg.Transparency = 1
+        leftLeg.CanCollide = false
+        if leftLeg:FindFirstChildOfClass("SpecialMesh") then
+            leftLeg:FindFirstChildOfClass("SpecialMesh"):Destroy()
+        end
+    elseif rightLeg then
+        rightLeg.Transparency = 1
+        rightLeg.CanCollide = false
+        if rightLeg:FindFirstChildOfClass("SpecialMesh") then
+            rightLeg:FindFirstChildOfClass("SpecialMesh"):Destroy()
+        end
+    end
+end
+
+-- 执行R6美化无腿
+R6_BeautifyLegless()
+player.CharacterAdded:Connect(function()
+    wait(1)
+    R6_BeautifyLegless()
+end)
