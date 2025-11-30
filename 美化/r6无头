@@ -1,0 +1,43 @@
+-- R6美化无头（修复版 - 移除头盔和饰品）
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function R6_BeautifyHeadless()
+    local character = player.Character
+    if not character then
+        character = player.CharacterAdded:Wait()
+    end
+    
+    local head = character:FindFirstChild("Head")
+    if head then
+        -- 移除所有头部装饰和头盔
+        for _, child in ipairs(head:GetChildren()) do
+            if child:IsA("SpecialMesh") or child:IsA("Decal") or child:IsA("Part") then
+                child:Destroy()
+            end
+        end
+        
+        -- 移除角色中可能作为头盔的配件
+        for _, child in ipairs(character:GetChildren()) do
+            if child:IsA("Accoutrement") then
+                local handle = child:FindFirstChild("Handle")
+                if handle then
+                    local attachment = handle:FindFirstChildOfClass("Attachment")
+                    if attachment and attachment.Parent and attachment.Parent:IsDescendantOf(head) then
+                        child:Destroy()
+                    end
+                end
+            end
+        end
+        
+        head.Transparency = 1
+        head.CanCollide = false
+    end
+end
+
+-- 执行R6美化无头
+R6_BeautifyHeadless()
+player.CharacterAdded:Connect(function()
+    wait(1)
+    R6_BeautifyHeadless()
+end)
