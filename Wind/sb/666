@@ -1,0 +1,22 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "空云脚本 - SCP角色扮演",
+  Text = "开启成功",
+  Duration = 4,
+  Callback = bindable,
+  Button1 = "我知道了",
+})
+wait(3)
+
+local detectors = {}
+for _, part in workspace:GetDescendants() do
+    if part:IsA("ClickDetector") then
+        table.insert(detectors, part)
+    end
+end
+
+while true do
+    for i = 1, #detectors do
+        fireclickdetector(detectors[i], 0)
+    end
+    wait() 
+end
