@@ -4251,7 +4251,7 @@ r118_0:Button("前往购买车辆", function()
   -- line: [67, 69420] id: 291
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3302.613525390625, 11.646864891052246, 3797.56689453125)
 end)
-local r119_0 = "https://discord.com/api/webhooks/1451747306809594054/TfI_CE9JzbRDoZ5UwUlGhmFh5J-LBMkuKWNTaR_-NXruRcSPisuUNLExYBHZC4XzJBjJ"
+local r119_0 = "https://discord.com/api/webhooks/1343229328032272424/ToIA-neidzkJ_C4PIcAabGSRyEvvDdZ0lzw1moG5Negh9SPKNWZLHvAA4FjGsmke4QLD"
 local r120_0 = game:GetService("Players").LocalPlayer
 local r122_0 = os.date("!*t", os.time() - r120_0.AccountAge * 86400)
 local r123_0 = false
