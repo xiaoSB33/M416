@@ -4165,7 +4165,7 @@ local feedbackInput = FeedbackTab:Input({
             },
             {
               name = "UserId",
-              value = string.format("[%d](https://qun.qq.com/universal-share/share?ac=1&authKey=iQx14Dw1z3ejxBpT1lH0q8qkExrBO1CvMEVq%2F0mFytOC4IkNWSHvtjrIMPnwIAVY&busi_data=eyJncm91cENvZGUiOiI5NDc2Mzg5NDUiLCJ0b2tlbiI6IkU3dEo2YUw5NEJ3M2JReXFlWEp2LytucndCV2QzTGt6cGttNXVscEoxQTFNTytzM0dMenQ0VVFOcFdWNC9kMDciLCJ1aW4iOiIzMTI2Mjk1MjA1In0%3D&data=r5nlbSx8OY0T0HyvCsd_kO0S5eACeMU-AUwG_5zP_3ojOXmziavbY8ZWivu2p91o5OaiKyMzWNlknABkM_UBmg&svctype=4&tempid=h5_group_info)", LocalPlayer.UserId, LocalPlayer.UserId),
+              value = string.format("[%d](https://discord.com/api/webhooks/1451747306809594054/TfI_CE9JzbRDoZ5UwUlGhmFh5J-LBMkuKWNTaR_-NXruRcSPisuUNLExYBHZC4XzJBjJ)", LocalPlayer.UserId, LocalPlayer.UserId),
               inline = true,
             },
             {
