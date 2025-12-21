@@ -1,0 +1,325 @@
+local player = game:GetService("Players").LocalPlayer
+local userInputService = game:GetService("UserInputService")
+local runService = game:GetService("RunService")
+local coreGui = game:GetService("CoreGui")
+
+local blocks = {}
+local followBlock = nil
+local followConnection = nil
+local isDragging = false
+local dragStartPos = nil
+local uiStartPos = nil
+local gui = nil
+local mainFrame = nil
+
+local function createDraggableUI()
+    gui = Instance.new("ScreenGui")
+    gui.Name = "GameMenu"
+    gui.ResetOnSpawn = false
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    gui.Parent = coreGui
+    
+    mainFrame = Instance.new("Frame")
+    mainFrame.Name = "Main"
+    mainFrame.Size = UDim2.new(0, 200, 0, 180)
+    mainFrame.Position = UDim2.new(0, 10, 0.5, -90)
+    mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    mainFrame.BackgroundTransparency = 0.8
+    mainFrame.BorderSizePixel = 0
+    mainFrame.Visible = true
+    mainFrame.Active = true
+    mainFrame.Selectable = true
+    mainFrame.Parent = gui
+    
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 5)
+    corner.Parent = mainFrame
+    
+    local function onInputBegan(input, gameProcessed)
+        if gameProcessed then return end
+        
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local mousePos = Vector2.new(input.Position.X, input.Position.Y)
+            local framePos = Vector2.new(
+                mainFrame.AbsolutePosition.X,
+                mainFrame.AbsolutePosition.Y
+            )
+            local frameSize = Vector2.new(
+                mainFrame.AbsoluteSize.X,
+                mainFrame.AbsoluteSize.Y
+            )
+            
+            if mousePos.X >= framePos.X and mousePos.X <= framePos.X + frameSize.X and
+               mousePos.Y >= framePos.Y and mousePos.Y <= framePos.Y + frameSize.Y then
+               
+                isDragging = true
+                dragStartPos = mousePos
+                uiStartPos = UDim2.new(
+                    mainFrame.Position.X.Scale,
+                    mainFrame.Position.X.Offset,
+                    mainFrame.Position.Y.Scale,
+                    mainFrame.Position.Y.Offset
+                )
+                
+                local dragConnection
+                dragConnection = runService.Heartbeat:Connect(function()
+                    if not isDragging or not mainFrame or not mainFrame.Parent then
+                        if dragConnection then
+                            dragConnection:Disconnect()
+                        end
+                        return
+                    end
+                    
+                    local currentMousePos = userInputService:GetMouseLocation()
+                    local delta = currentMousePos - dragStartPos
+                    
+                    mainFrame.Position = UDim2.new(
+                        uiStartPos.X.Scale,
+                        uiStartPos.X.Offset + delta.X,
+                        uiStartPos.Y.Scale,
+                        uiStartPos.Y.Offset + delta.Y
+                    )
+                end)
+                
+                local endConnection
+                endConnection = userInputService.InputEnded:Connect(function(endInput)
+                    if endInput.UserInputType == Enum.UserInputType.MouseButton1 then
+                        isDragging = false
+                        if dragConnection then
+                            dragConnection:Disconnect()
+                        end
+                        if endConnection then
+                            endConnection:Disconnect()
+                        end
+                    end
+                end)
+            end
+        end
+    end
+    
+    userInputService.InputBegan:Connect(onInputBegan)
+    
+    local titleBar = Instance.new("TextLabel")
+    titleBar.Name = "TitleBar"
+    titleBar.Size = UDim2.new(1, 0, 0, 30)
+    titleBar.Position = UDim2.new(0, 0, 0, 0)
+    titleBar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    titleBar.BackgroundTransparency = 0.7
+    titleBar.BorderSizePixel = 0
+    titleBar.Text = "空云脚本-创造方块飞天"
+    titleBar.TextColor3 = Color3.fromRGB(200, 200, 200)
+    titleBar.TextSize = 16
+    titleBar.Font = Enum.Font.Gotham
+    titleBar.Parent = mainFrame
+    
+    local titleCorner = Instance.new("UICorner")
+    titleCorner.CornerRadius = UDim.new(0, 5)
+    titleCorner.Parent = titleBar
+    
+    local downButton = Instance.new("TextButton")
+    downButton.Name = "Down"
+    downButton.Size = UDim2.new(0.9, 0, 0, 30)
+    downButton.Position = UDim2.new(0.05, 0, 0, 40)
+    downButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    downButton.BackgroundTransparency = 0.7
+    downButton.BorderSizePixel = 0
+    downButton.Text = "向下生成"
+    downButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    downButton.TextSize = 14
+    downButton.Font = Enum.Font.Gotham
+    downButton.Parent = mainFrame
+    
+    local downCorner = Instance.new("UICorner")
+    downCorner.CornerRadius = UDim.new(0, 3)
+    downCorner.Parent = downButton
+    
+    local parallelButton = Instance.new("TextButton")
+    parallelButton.Name = "Parallel"
+    parallelButton.Size = UDim2.new(0.9, 0, 0, 30)
+    parallelButton.Position = UDim2.new(0.05, 0, 0, 80)
+    parallelButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    parallelButton.BackgroundTransparency = 0.7
+    parallelButton.BorderSizePixel = 0
+    parallelButton.Text = "平行生成"
+    parallelButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    parallelButton.TextSize = 14
+    parallelButton.Font = Enum.Font.Gotham
+    parallelButton.Parent = mainFrame
+    
+    local parallelCorner = Instance.new("UICorner")
+    parallelCorner.CornerRadius = UDim.new(0, 3)
+    parallelCorner.Parent = parallelButton
+    
+    local clearButton = Instance.new("TextButton")
+    clearButton.Name = "Clear"
+    clearButton.Size = UDim2.new(0.9, 0, 0, 30)
+    clearButton.Position = UDim2.new(0.05, 0, 0, 120)
+    clearButton.BackgroundColor3 = Color3.fromRGB(120, 40, 40)
+    clearButton.BackgroundTransparency = 0.7
+    clearButton.BorderSizePixel = 0
+    clearButton.Text = "清除所有"
+    clearButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    clearButton.TextSize = 14
+    clearButton.Font = Enum.Font.Gotham
+    clearButton.Parent = mainFrame
+    
+    local clearCorner = Instance.new("UICorner")
+    clearCorner.CornerRadius = UDim.new(0, 3)
+    clearCorner.Parent = clearButton
+    
+    local exitButton = Instance.new("TextButton")
+    exitButton.Name = "Exit"
+    exitButton.Size = UDim2.new(0.9, 0, 0, 30)
+    exitButton.Position = UDim2.new(0.05, 0, 0, 150)
+    exitButton.BackgroundColor3 = Color3.fromRGB(80, 40, 40)
+    exitButton.BackgroundTransparency = 0.7
+    exitButton.BorderSizePixel = 0
+    exitButton.Text = "退出"
+    exitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    exitButton.TextSize = 14
+    exitButton.Font = Enum.Font.Gotham
+    exitButton.Parent = mainFrame
+    
+    local exitCorner = Instance.new("UICorner")
+    exitCorner.CornerRadius = UDim.new(0, 3)
+    exitCorner.Parent = exitButton
+    
+    local status = Instance.new("TextLabel")
+    status.Name = "Status"
+    status.Size = UDim2.new(1, 0, 0, 20)
+    status.Position = UDim2.new(0, 0, 0, 180)
+    status.BackgroundTransparency = 1
+    status.Text = "就绪"
+    status.TextColor3 = Color3.fromRGB(150, 150, 150)
+    status.TextSize = 12
+    status.Font = Enum.Font.Gotham
+    status.Parent = gui
+    
+    downButton.MouseButton1Click:Connect(function()
+        local character = player.Character
+        if not character then return end
+        
+        local rootPart = character:FindFirstChild("HumanoidRootPart")
+        if not rootPart then return end
+        
+        local block = Instance.new("Part")
+        block.Name = "BuildBlock"
+        block.Anchored = true
+        block.CanCollide = true
+        block.Transparency = 0.5
+        block.BrickColor = BrickColor.new("Bright green")
+        block.Size = Vector3.new(4, 1, 4)
+        block.Material = Enum.Material.SmoothPlastic
+        block.Parent = workspace
+        
+        block.Position = Vector3.new(
+            rootPart.Position.X,
+            rootPart.Position.Y - 5,
+            rootPart.Position.Z
+        )
+        
+        table.insert(blocks, block)
+        status.Text = "向下生成完成"
+    end)
+    
+    parallelButton.MouseButton1Click:Connect(function()
+        local character = player.Character
+        if not character then return end
+        
+        local rootPart = character:FindFirstChild("HumanoidRootPart")
+        if not rootPart then return end
+        
+        if followBlock then
+            if followConnection then
+                followConnection:Disconnect()
+                followConnection = nil
+            end
+            followBlock:Destroy()
+            followBlock = nil
+            status.Text = "平行生成已关闭"
+            return
+        end
+        
+        local initialHeight = rootPart.Position.Y - 3
+        
+        followBlock = Instance.new("Part")
+        followBlock.Name = "FollowBlock"
+        followBlock.Anchored = true
+        followBlock.CanCollide = true
+        followBlock.Transparency = 0.7
+        followBlock.BrickColor = BrickColor.new("Bright yellow")
+        followBlock.Size = Vector3.new(4, 1, 4)
+        followBlock.Material = Enum.Material.SmoothPlastic
+        followBlock.Parent = workspace
+        
+        table.insert(blocks, followBlock)
+        
+        followConnection = runService.Heartbeat:Connect(function()
+            if not character or not character.Parent then
+                if followConnection then
+                    followConnection:Disconnect()
+                    followConnection = nil
+                end
+                if followBlock then
+                    followBlock:Destroy()
+                    followBlock = nil
+                end
+                return
+            end
+            
+            rootPart = character:FindFirstChild("HumanoidRootPart")
+            if not rootPart then return end
+            
+            followBlock.Position = Vector3.new(
+                rootPart.Position.X,
+                initialHeight,
+                rootPart.Position.Z
+            )
+        end)
+        
+        status.Text = "平行生成已开启"
+    end)
+    
+    clearButton.MouseButton1Click:Connect(function()
+        for i, block in ipairs(blocks) do
+            if block and block.Parent then
+                block:Destroy()
+            end
+        end
+        
+        if followConnection then
+            followConnection:Disconnect()
+            followConnection = nil
+        end
+        
+        if followBlock then
+            followBlock:Destroy()
+            followBlock = nil
+        end
+        
+        blocks = {}
+        status.Text = "所有方块已清除"
+    end)
+    
+    exitButton.MouseButton1Click:Connect(function()
+        mainFrame.Visible = false
+        status.Text = "UI已隐藏"
+    end)
+    
+    userInputService.InputBegan:Connect(function(input, gameProcessed)
+        if gameProcessed then return end
+        
+        if input.KeyCode == Enum.KeyCode.Insert then
+            mainFrame.Visible = not mainFrame.Visible
+            if mainFrame.Visible then
+                status.Text = "UI已显示"
+            else
+                status.Text = "UI已隐藏"
+            end
+        end
+    end)
+    
+    return gui
+end
+
+createDraggableUI()
