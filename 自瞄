@@ -1,0 +1,756 @@
+local v1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/gycgchgyfytdttr/QQ-9-2-8-9-50173/refs/heads/main/Ul%E6%BA%90%E7%A0%81.lua"))():MakeWindow({
+    Title = " 空云脚本",
+    SubTitle = " 自瞄1.0",
+    SaveFolder = "Redz Config"
+})
+print("\229\143\141\230\140\130\230\156\186\229\183\178\229\188\128\229\144\175")
+tick()
+local vu2 = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu2:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu2:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
+v1:AddMinimizeButton({
+    Button = {
+        Image = "rbxassetid://98541457845136",
+        BackgroundTransparency = 0,
+        Size = UDim2.fromOffset(60, 60)
+    },
+    Corner = {
+        CornerRadius = UDim.new(0, 10)
+    }
+})
+local v3 = v1:MakeTab({
+    "\232\135\170\231\158\132",
+    "eye"
+})
+local vu4 = false
+local vu5 = false
+local vu6 = false
+local vu7 = 50
+local vu8 = game:GetService("Players").LocalPlayer
+local vu9 = game:GetService("RunService")
+local vu10 = game:GetService("Players")
+local vu11 = workspace.CurrentCamera
+local vu12 = "Head"
+local vu13 = false
+local vu14 = false
+local vu15 = 1.2
+local vu16 = false
+local vu17 = Drawing.new("Circle")
+vu17.Visible = false
+vu17.Thickness = 2
+vu17.Color = Color3.fromRGB(255, 0, 0)
+vu17.Filled = false
+vu17.Radius = vu7
+vu17.Position = Vector2.new(vu11.ViewportSize.X / 2, vu11.ViewportSize.Y / 2)
+local vu18 = nil
+local function vu19()
+    vu17.Position = Vector2.new(vu11.ViewportSize.X / 2, vu11.ViewportSize.Y / 2)
+end
+local function vu22(p20)
+    local v21 = (p20 - vu11.CFrame.Position).Unit
+    vu11.CFrame = CFrame.new(vu11.CFrame.Position, vu11.CFrame.Position + v21)
+end
+local function vu24(p23)
+    return p23.Team == vu8.Team
+end
+local function vu31(p25, p26)
+    if not vu16 then
+        return true
+    end
+    local v27 = vu8.Character
+    if not v27 then
+        return false
+    end
+    local v28 = p25.Character
+    if v28 then
+        v28 = p25.Character:FindFirstChild(vu12)
+    end
+    if not v28 then
+        return false
+    end
+    local v29 = Ray.new(vu11.CFrame.Position, (v28.Position - vu11.CFrame.Position).Unit * p26)
+    local v30, _ = workspace:FindPartOnRayWithIgnoreList(v29, {
+        v27
+    })
+    return not v30 and true or not v30:IsDescendantOf(p25.Character)
+end
+local function vu34(p32)
+    local v33 = p32.Character
+    if v33 then
+        v33 = p32.Character:FindFirstChildOfClass("Humanoid")
+    end
+    if v33 then
+        v33 = v33.Health > 0
+    end
+    return v33
+end
+local function vu50()
+    local v35 = math.huge
+    local v36 = math.huge
+    local v37 = Vector2.new(vu11.ViewportSize.X / 2, vu11.ViewportSize.Y / 2)
+    local v38 = vu10
+    local v39, v40, v41 = ipairs(v38:GetPlayers())
+    local v42 = nil
+    local v43 = nil
+    while true do
+        local v44
+        v41, v44 = v39(v40, v41)
+        if v41 == nil then
+            break
+        end
+        if v44 ~= vu8 and not (vu13 and vu24(v44)) then
+            local v45 = v44.Character
+            if v45 and (v45:FindFirstChild(vu12) and (not vu14 or vu34(v44))) and not (vu16 and vu31(v44, 100)) then
+                local v46, v47 = vu11:WorldToViewportPoint(v45[vu12].Position)
+                local v48 = (Vector2.new(v46.x, v46.y) - v37).Magnitude
+                if v48 < v35 and v47 then
+                    if v48 >= vu7 then
+                        v48 = v35
+                    else
+                        v43 = v44
+                    end
+                else
+                    v48 = v35
+                end
+                local v49 = v45:FindFirstChildOfClass("Humanoid")
+                if v49 and (v49.Health > 0 and v49.Health < v36) then
+                    v36 = v49.Health
+                    v42 = v44
+                    v35 = v48
+                else
+                    v35 = v48
+                end
+            end
+        end
+    end
+    return vu6 and v42 and v42 or v43
+end
+local function vu57(p51, p52)
+    if not vu5 then
+        local v53 = p51.Character and p51.Character:FindFirstChild(vu12)
+        if v53 then
+            v53 = p51.Character[vu12].Position
+        end
+        return v53
+    end
+    local v54 = p51.Character
+    if v54 and v54:FindFirstChild(vu12) then
+        local v55 = v54[vu12]
+        local v56 = v55.Velocity
+        return v55.Position + v56 * p52 * vu15
+    end
+end
+local vu58 = nil
+local vu59 = {}
+local function vu63(p60)
+    if vu59[p60] then
+        return
+    else
+        local v61 = p60.Character
+        if v61 then
+            local v62 = Instance.new("Highlight")
+            v62.Adornee = v61
+            v62.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            v62.FillColor = Color3.fromRGB(255, 0, 0)
+            v62.OutlineColor = Color3.fromRGB(255, 255, 255)
+            v62.FillTransparency = 0.5
+            v62.OutlineTransparency = 0
+            v62.Parent = v61
+            vu59[p60] = v62
+        end
+    end
+end
+local function vu65(p64)
+    if vu59[p64] then
+        vu59[p64]:Destroy()
+        vu59[p64] = nil
+    end
+end
+local function vu70()
+    local v66, v67, v68 = pairs(vu59)
+    while true do
+        local v69
+        v68, v69 = v66(v67, v68)
+        if v68 == nil then
+            break
+        end
+        vu65(v68)
+    end
+    if vu4 and vu58 then
+        vu63(vu58)
+    end
+end
+local v71 = Instance.new("ScreenGui")
+v71.Name = "AimingPlayerList"
+v71.Parent = game:GetService("CoreGui")
+local v72 = Instance.new("Frame")
+v72.Size = UDim2.new(0, 200, 0, 100)
+v72.Position = UDim2.new(1, - 210, 0, 10)
+v72.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+v72.BackgroundTransparency = 0.5
+v72.BorderSizePixel = 0
+v72.Parent = v71
+local v73 = Instance.new("UICorner")
+v73.CornerRadius = UDim.new(0, 5)
+v73.Parent = v72
+local v74 = Instance.new("TextLabel")
+v74.Size = UDim2.new(1, 0, 0, 20)
+v74.Position = UDim2.new(0, 0, 0, 0)
+v74.BackgroundTransparency = 1
+v74.Text = "\229\189\147\229\137\141\232\135\170\231\158\132\231\142\169\229\174\182"
+v74.TextColor3 = Color3.fromRGB(255, 255, 255)
+v74.TextScaled = true
+v74.Parent = v72
+local vu75 = Instance.new("TextLabel")
+vu75.Size = UDim2.new(1, - 10, 1, - 25)
+vu75.Position = UDim2.new(0, 5, 0, 25)
+vu75.BackgroundTransparency = 1
+vu75.Text = "\230\151\160"
+vu75.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu75.TextWrapped = true
+vu75.TextScaled = true
+vu75.Parent = v72
+local function vu76()
+    if vu4 and vu58 then
+        vu75.Text = vu58.Name
+    else
+        vu75.Text = "\230\151\160"
+    end
+end
+local function vu81(p77)
+    if p77 then
+        vu4 = true
+        vu17.Visible = true
+        vu17.Radius = vu7
+        if vu18 then
+            vu18:Disconnect()
+        end
+        vu18 = vu9.RenderStepped:Connect(function(p78)
+            if vu4 then
+                vu19()
+                local v79 = vu50()
+                if v79 and v79.Character and v79.Character:FindFirstChild(vu12) then
+                    vu58 = v79
+                    local v80 = vu57(v79, p78)
+                    if v80 then
+                        vu22(v80)
+                    end
+                else
+                    vu58 = nil
+                end
+                vu70()
+                vu76()
+            end
+        end)
+    else
+        vu4 = false
+        vu58 = nil
+        if vu18 then
+            vu18:Disconnect()
+            vu18 = nil
+        end
+        vu17.Visible = false
+        vu70()
+        vu76()
+    end
+end
+v3:AddToggle({
+    Title = "\232\135\170\231\158\132 (\229\188\128/\229\133\179)",
+    Default = false,
+    Callback = function(p82)
+        vu81(p82)
+    end
+})
+v3:AddToggle({
+    Title = "\233\162\132\229\136\164\232\135\170\231\158\132",
+    Default = false,
+    Callback = function(p83)
+        vu5 = p83
+    end
+})
+v3:AddToggle({
+    Title = "\228\188\152\229\133\136\228\189\142\232\161\128\233\135\143",
+    Default = false,
+    Callback = function(p84)
+        vu6 = p84
+    end
+})
+v3:AddSlider({
+    Title = "\232\135\170\231\158\132\229\156\136\229\164\167\229\176\143",
+    Default = vu7,
+    Min = 1,
+    Max = 600,
+    Callback = function(p85)
+        vu7 = p85
+        if vu4 then
+            vu17.Radius = vu7
+        else
+            vu17.Visible = false
+        end
+    end
+})
+v3:AddSlider({
+    Title = "\232\135\170\231\158\132\229\156\136\229\142\154\229\186\166",
+    Default = vu17.Thickness,
+    Min = 1,
+    Max = 10,
+    Callback = function(p86)
+        vu17.Thickness = p86
+    end
+})
+local vu87 = {
+    ["\229\164\180"] = "Head",
+    ["\232\131\184"] = "UpperTorso",
+    ["\229\183\166\230\137\139"] = "LeftHand",
+    ["\229\143\179\230\137\139"] = "RightHand",
+    ["\229\183\166\232\133\191"] = "LeftFoot",
+    ["\229\143\179\232\133\191"] = "RightFoot"
+}
+v3:AddDropdown({
+    Name = "\232\135\170\231\158\132\231\142\169\229\174\182\232\186\171\228\189\147\233\131\168\228\189\141",
+    Options = {
+        "\229\164\180",
+        "\232\131\184",
+        "\229\183\166\230\137\139",
+        "\229\143\179\230\137\139",
+        "\229\183\166\232\133\191",
+        "\229\143\179\232\133\191"
+    },
+    Default = "\229\164\180",
+    Callback = function(p88)
+        vu12 = vu87[p88]
+    end
+})
+local vu89 = {
+    ["\231\186\162\232\137\178"] = Color3.fromRGB(255, 0, 0),
+    ["\233\187\132\232\137\178"] = Color3.fromRGB(255, 255, 0),
+    ["\231\187\191\232\137\178"] = Color3.fromRGB(0, 255, 0),
+    ["\232\147\157\232\137\178"] = Color3.fromRGB(0, 0, 255),
+    ["\231\180\171\232\137\178"] = Color3.fromRGB(128, 0, 128),
+    ["\230\169\153\232\137\178"] = Color3.fromRGB(255, 165, 0),
+    ["\233\187\145\232\137\178"] = Color3.fromRGB(0, 0, 0)
+}
+v3:AddDropdown({
+    Name = "\232\135\170\231\158\132\229\156\136\233\162\156\232\137\178",
+    Options = {
+        "\231\186\162\232\137\178",
+        "\233\187\132\232\137\178",
+        "\231\187\191\232\137\178",
+        "\232\147\157\232\137\178",
+        "\231\180\171\232\137\178",
+        "\230\169\153\232\137\178",
+        "\233\187\145\232\137\178"
+    },
+    Default = "\231\186\162\232\137\178",
+    Callback = function(p90)
+        vu17.Color = vu89[p90]
+    end
+})
+v3:AddToggle({
+    Title = "\233\152\159\228\188\141\230\163\128\230\181\139",
+    Default = false,
+    Callback = function(p91)
+        vu13 = p91
+    end
+})
+v3:AddToggle({
+    Title = "\230\180\187\228\189\147\230\163\128\230\181\139",
+    Default = false,
+    Callback = function(p92)
+        vu14 = p92
+    end
+})
+v3:AddSlider({
+    Title = "\233\162\132\229\136\164\232\183\157\231\166\187",
+    Default = 12,
+    Min = 1,
+    Max = 30,
+    Callback = function(p93)
+        vu15 = p93 / 10
+    end
+})
+v3:AddToggle({
+    Title = "\229\162\153\229\163\129\230\163\128\230\181\139",
+    Default = false,
+    Callback = function(p94)
+        vu16 = p94
+    end
+})
+local v95 = v1:MakeTab({
+    "\233\128\143\232\167\134",
+    "eye"
+})
+local v96 = game:GetService("Players")
+local vu97 = game:GetService("RunService")
+game:GetService("CoreGui")
+local vu98 = v96:GetPlayers()
+local vu99 = v96.LocalPlayer
+local vu100 = {}
+local vu101 = false
+local vu102 = Color3.fromRGB(255, 255, 255)
+local vu103 = false
+local vu104 = nil
+local vu105 = false
+local vu106 = {}
+local function vu111(p107, p108)
+    if vu100[p107] then
+        return
+    else
+        local v109 = p107.Character or p107.CharacterAdded:Wait()
+        if v109 then
+            local v110 = Instance.new("Highlight")
+            v110.Adornee = v109
+            v110.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            v110.FillColor = p108 or Color3.fromRGB(255, 255, 255)
+            v110.OutlineColor = Color3.fromRGB(255, 255, 255)
+            v110.FillTransparency = 0.5
+            v110.OutlineTransparency = 0
+            v110.Parent = v109
+            vu100[p107] = v110
+        end
+    end
+end
+local function vu113(p112)
+    if vu100[p112] then
+        vu100[p112]:Destroy()
+        vu100[p112] = nil
+    end
+end
+local function vu122()
+    if vu101 then
+        local v114, v115, v116 = ipairs(vu98)
+        while true do
+            local v117
+            v116, v117 = v114(v115, v116)
+            if v116 == nil then
+                break
+            end
+            if v117 ~= vu99 then
+                vu111(v117, vu102)
+            end
+        end
+    else
+        local v118, v119, v120 = pairs(vu100)
+        while true do
+            local v121
+            v120, v121 = v118(v119, v120)
+            if v120 == nil then
+                break
+            end
+            vu113(v120)
+        end
+    end
+end
+local function vu124(p123)
+    vu101 = p123
+    vu122()
+end
+local function vu130(p125)
+    vu102 = p125
+    if vu101 then
+        local v126, v127, v128 = pairs(vu100)
+        while true do
+            local v129
+            v128, v129 = v126(v127, v128)
+            if v128 == nil then
+                break
+            end
+            v129.FillColor = p125
+        end
+    end
+end
+local function vu142(p131)
+    vu103 = p131
+    if vu103 then
+        if vu104 then
+            vu104:Disconnect()
+        end
+        vu104 = vu97.RenderStepped:Connect(function()
+            if vu101 then
+                local v132 = tick() % 5 / 5
+                local v133 = Color3.fromHSV(v132, 1, 1)
+                vu102 = v133
+                local v134, v135, v136 = pairs(vu100)
+                while true do
+                    local v137
+                    v136, v137 = v134(v135, v136)
+                    if v136 == nil then
+                        break
+                    end
+                    v137.FillColor = v133
+                end
+            end
+        end)
+    else
+        if vu104 then
+            vu104:Disconnect()
+            vu104 = nil
+        end
+        vu102 = Color3.fromRGB(255, 255, 255)
+        if vu101 then
+            local v138, v139, v140 = pairs(vu100)
+            while true do
+                local v141
+                v140, v141 = v138(v139, v140)
+                if v140 == nil then
+                    break
+                end
+                v141.FillColor = vu102
+            end
+        end
+    end
+end
+local function vu154(p143)
+    if vu106[p143] then
+        return
+    else
+        local v144 = p143.Character or p143.CharacterAdded:Wait()
+        if v144 then
+            local vu145 = v144:FindFirstChildOfClass("Humanoid")
+            if vu145 then
+                local v146 = v144:FindFirstChild("Head")
+                if v146 then
+                    local v147 = Instance.new("BillboardGui")
+                    v147.Adornee = v146
+                    v147.Size = UDim2.new(0, 200, 0, 50)
+                    v147.StudsOffset = Vector3.new(0, 3, 0)
+                    v147.AlwaysOnTop = true
+                    v147.Parent = v144
+                    local v148 = Instance.new("Frame")
+                    v148.Size = UDim2.new(1, 0, 1, 0)
+                    v148.BackgroundTransparency = 1
+                    v148.Parent = v147
+                    local v149 = Instance.new("TextLabel")
+                    v149.Size = UDim2.new(1, 0, 0.5, 0)
+                    v149.Position = UDim2.new(0, 0, 0, 0)
+                    v149.BackgroundTransparency = 1
+                    v149.Text = p143.Name
+                    v149.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    v149.TextScaled = true
+                    v149.TextStrokeTransparency = 0.5
+                    v149.Parent = v148
+                    local v150 = Instance.new("Frame")
+                    v150.Size = UDim2.new(1, 0, 0.3, 0)
+                    v150.Position = UDim2.new(0, 0, 0.6, 0)
+                    v150.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                    v150.BorderSizePixel = 0
+                    v150.Parent = v148
+                    local vu151 = Instance.new("Frame")
+                    vu151.Size = UDim2.new(1, 0, 1, 0)
+                    vu151.Position = UDim2.new(0, 0, 0, 0)
+                    vu151.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+                    vu151.BorderSizePixel = 0
+                    vu151.Parent = v150
+                    local vu152 = Instance.new("TextLabel")
+                    vu152.Size = UDim2.new(1, 0, 1, 0)
+                    vu152.Position = UDim2.new(0, 0, 0, 0)
+                    vu152.BackgroundTransparency = 1
+                    vu152.Text = tostring(math.floor(vu145.Health)) .. "/" .. tostring(math.floor(vu145.MaxHealth))
+                    vu152.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    vu152.TextScaled = true
+                    vu152.TextStrokeTransparency = 0.5
+                    vu152.Parent = v150
+                    vu106[p143] = {
+                        billboard = v147,
+                        healthConnection = vu145:GetPropertyChangedSignal("Health"):Connect(function()
+                            local v153 = vu145.Health / vu145.MaxHealth
+                            vu151.Size = UDim2.new(v153, 0, 1, 0)
+                            vu152.Text = tostring(math.floor(vu145.Health)) .. "/" .. tostring(math.floor(vu145.MaxHealth))
+                            if v153 > 0.6 then
+                                vu151.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+                            elseif v153 > 0.3 then
+                                vu151.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+                            else
+                                vu151.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+                            end
+                        end)
+                    }
+                end
+            else
+                return
+            end
+        else
+            return
+        end
+    end
+end
+local function vu156(p155)
+    if vu106[p155] then
+        vu106[p155].billboard:Destroy()
+        vu106[p155].healthConnection:Disconnect()
+        vu106[p155] = nil
+    end
+end
+local function vu165()
+    if vu105 then
+        local v157, v158, v159 = ipairs(vu98)
+        while true do
+            local v160
+            v159, v160 = v157(v158, v159)
+            if v159 == nil then
+                break
+            end
+            if v160 ~= vu99 then
+                vu154(v160)
+            end
+        end
+    else
+        local v161, v162, v163 = pairs(vu106)
+        while true do
+            local v164
+            v163, v164 = v161(v162, v163)
+            if v163 == nil then
+                break
+            end
+            vu156(v163)
+        end
+    end
+end
+local function vu167(p166)
+    vu105 = p166
+    vu165()
+end
+v96.PlayerAdded:Connect(function(p168)
+    table.insert(vu98, p168)
+    if vu101 then
+        vu111(p168, vu102)
+    end
+    if vu105 then
+        vu154(p168)
+    end
+end)
+v96.PlayerRemoving:Connect(function(p169)
+    local v170, v171, v172 = ipairs(vu98)
+    while true do
+        local v173
+        v172, v173 = v170(v171, v172)
+        if v172 == nil then
+            break
+        end
+        if v173 == p169 then
+            table.remove(vu98, v172)
+            vu113(p169)
+            vu156(p169)
+            break
+        end
+    end
+end)
+local function vu175(_, p174)
+    if vu101 then
+        vu111(p174, vu102)
+    end
+    if vu105 then
+        vu154(p174)
+    end
+end
+local v176, v177, v178 = ipairs(vu98)
+local v179 = vu165
+local v180 = vu122
+local vu181 = vu103
+local v182 = vu99
+while true do
+    local vu183
+    v178, vu183 = v176(v177, v178)
+    if v178 == nil then
+        break
+    end
+    if vu183 ~= v182 then
+        vu183.CharacterAdded:Connect(function(p184)
+            vu175(p184, vu183)
+        end)
+        if vu183.Character then
+            vu175(vu183.Character, vu183)
+        end
+    end
+end
+local vu185 = {
+    ["\231\153\189\232\137\178"] = Color3.fromRGB(255, 255, 255),
+    ["\233\157\146\232\137\178"] = Color3.fromRGB(0, 255, 255),
+    ["\232\147\157\232\137\178"] = Color3.fromRGB(0, 0, 255),
+    ["\231\180\171\232\137\178"] = Color3.fromRGB(128, 0, 128),
+    ["\233\187\132\232\137\178"] = Color3.fromRGB(255, 255, 0),
+    ["\231\187\191\232\137\178"] = Color3.fromRGB(0, 255, 0),
+    ["\233\187\145\232\137\178"] = Color3.fromRGB(0, 0, 0)
+}
+v95:AddToggle({
+    Title = "\233\128\143\232\167\134\230\137\128\230\156\137\231\142\169\229\174\182",
+    Default = false,
+    Callback = function(p186)
+        vu124(p186)
+    end
+})
+v95:AddDropdown({
+    Name = "\233\128\143\232\167\134\233\162\156\232\137\178",
+    Options = {
+        "\231\153\189\232\137\178",
+        "\233\157\146\232\137\178",
+        "\232\147\157\232\137\178",
+        "\231\180\171\232\137\178",
+        "\233\187\132\232\137\178",
+        "\231\187\191\232\137\178",
+        "\233\187\145\232\137\178"
+    },
+    Default = "\231\153\189\232\137\178",
+    Callback = function(p187)
+        if not vu181 then
+            vu130(vu185[p187])
+        end
+    end
+})
+v95:AddToggle({
+    Title = "\229\189\169\232\153\185\232\137\178\233\128\143\232\167\134",
+    Default = false,
+    Callback = function(p188)
+        vu142(p188)
+    end
+})
+v95:AddToggle({
+    Title = "\230\152\190\231\164\186\231\142\169\229\174\182\229\144\141\229\173\151\229\146\140\232\161\128\233\135\143",
+    Default = false,
+    Callback = function(p189)
+        vu167(p189)
+    end
+})
+v180()
+v179()
+local v190 = v1:MakeTab({
+    "\232\190\133\229\138\169",
+    "cool"
+})
+v190:AddToggle({
+    Title = "\233\128\159\229\186\166 (\229\188\128/\229\133\179)",
+    Default = false,
+    Callback = function(p191)
+        if p191 == true then
+            sudu = game:GetService("RunService").Heartbeat:Connect(function()
+                if game:GetService("Players").LocalPlayer.Character and (game:GetService("Players").LocalPlayer.Character.Humanoid and (game:GetService("Players").LocalPlayer.Character.Humanoid.Parent and game:GetService("Players").LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0)) then
+                    game:GetService("Players").LocalPlayer.Character:TranslateBy(game:GetService("Players").LocalPlayer.Character.Humanoid.MoveDirection * Speed / 10)
+                end
+            end)
+        elseif not p191 and sudu then
+            sudu:Disconnect()
+            sudu = nil
+        end
+    end
+})
+v190:AddSlider({
+    Title = "\233\128\159\229\186\166\232\174\190\231\189\174",
+    Description = "\230\139\137\230\157\161",
+    Default = 1,
+    Min = 1,
+    Max = 1000,
+    Callback = function(p192)
+        Speed = p192
+    end
+})
+v190:AddButton({
+    Title = "\230\151\160\233\153\144\232\183\179\232\183\131",
+    Callback = function()
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+        end)
+    end
+})
