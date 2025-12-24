@@ -1,0 +1,191 @@
+local player = game:GetService("Players").LocalPlayer
+local runService = game:GetService("RunService")
+local userInputService = game:GetService("UserInputService")
+local coreGui = game:GetService("CoreGui")
+
+local function createUltraFastSpinSystem()
+    local rotationSpeed = 999990
+    local rotationRadius = 0.5
+    local rotationAngle = 0
+    local isSpinning = false
+    local spinConnection = nil
+    
+    local function startSpinning()
+        if isSpinning then return end
+        
+        local character = player.Character
+        if not character then return end
+        
+        local rootPart = character:FindFirstChild("HumanoidRootPart")
+        if not rootPart then return end
+        
+        isSpinning = true
+        
+        spinConnection = runService.Heartbeat:Connect(function()
+            if not character or not character.Parent or not isSpinning then
+                if spinConnection then
+                    spinConnection:Disconnect()
+                    spinConnection = nil
+                end
+                isSpinning = false
+                return
+            end
+            
+            rootPart = character:FindFirstChild("HumanoidRootPart")
+            if not rootPart then return end
+            
+            rotationAngle = rotationAngle + rotationSpeed
+            if rotationAngle > 360 then
+                rotationAngle = rotationAngle - 360
+            end
+            
+            local rad = math.rad(rotationAngle)
+            local offsetX = math.cos(rad) * rotationRadius
+            local offsetZ = math.sin(rad) * rotationRadius
+            
+            rootPart.CFrame = CFrame.new(
+                rootPart.Position.X + offsetX,
+                rootPart.Position.Y,
+                rootPart.Position.Z + offsetZ
+            ) * CFrame.Angles(0, rad, 0)
+        end)
+    end
+    
+    local function stopSpinning()
+        isSpinning = false
+        
+        if spinConnection then
+            spinConnection:Disconnect()
+            spinConnection = nil
+        end
+        
+        rotationAngle = 0
+    end
+    
+    return {
+        start = startSpinning,
+        stop = stopSpinning,
+        isSpinning = function() return isSpinning end
+    }
+end
+
+local spinSystem = createUltraFastSpinSystem()
+
+local function createDraggableUI()
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "SpinControl"
+    gui.ResetOnSpawn = false
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    gui.Parent = coreGui
+    
+    local mainFrame = Instance.new("Frame")
+    mainFrame.Name = "Main"
+    mainFrame.Size = UDim2.new(0, 150, 0, 60)
+    mainFrame.Position = UDim2.new(0, 10, 0, 10)
+    mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    mainFrame.BackgroundTransparency = 0.8
+    mainFrame.BorderSizePixel = 0
+    mainFrame.Parent = gui
+    
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 5)
+    corner.Parent = mainFrame
+    
+    -- 添加标题栏用于拖动
+    local titleBar = Instance.new("TextButton")
+    titleBar.Name = "TitleBar"
+    titleBar.Size = UDim2.new(1, 0, 0, 20)
+    titleBar.Position = UDim2.new(0, 0, 0, 0)
+    titleBar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    titleBar.BackgroundTransparency = 0.7
+    titleBar.BorderSizePixel = 0
+    titleBar.Text = "空云脚本-旋转"
+    titleBar.TextColor3 = Color3.fromRGB(200, 200, 200)
+    titleBar.TextSize = 12
+    titleBar.Font = Enum.Font.Gotham
+    titleBar.AutoButtonColor = false
+    titleBar.Parent = mainFrame
+    
+    local titleCorner = Instance.new("UICorner")
+    titleCorner.CornerRadius = UDim.new(0, 5)
+    titleCorner.Parent = titleBar
+    
+    local isDragging = false
+    local dragStartPos = nil
+    local uiStartPos = nil
+    
+    -- 修复拖动功能
+    titleBar.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            isDragging = true
+            dragStartPos = Vector2.new(input.Position.X, input.Position.Y)
+            uiStartPos = UDim2.new(mainFrame.Position.X.Scale, mainFrame.Position.X.Offset, 
+                                   mainFrame.Position.Y.Scale, mainFrame.Position.Y.Offset)
+            
+            local dragConnection
+            dragConnection = runService.Heartbeat:Connect(function()
+                if not isDragging or not mainFrame or not mainFrame.Parent then
+                    if dragConnection then
+                        dragConnection:Disconnect()
+                    end
+                    return
+                end
+                
+                local mouse = userInputService:GetMouseLocation()
+                local delta = Vector2.new(mouse.X, mouse.Y) - dragStartPos
+                
+                mainFrame.Position = UDim2.new(
+                    uiStartPos.X.Scale, 
+                    uiStartPos.X.Offset + delta.X,
+                    uiStartPos.Y.Scale, 
+                    uiStartPos.Y.Offset + delta.Y
+                )
+            end)
+            
+            local endConnection
+            endConnection = userInputService.InputEnded:Connect(function(endInput)
+                if endInput.UserInputType == Enum.UserInputType.MouseButton1 then
+                    isDragging = false
+                    if dragConnection then
+                        dragConnection:Disconnect()
+                    end
+                    if endConnection then
+                        endConnection:Disconnect()
+                    end
+                end
+            end)
+        end
+    end)
+    
+    local toggleButton = Instance.new("TextButton")
+    toggleButton.Name = "Toggle"
+    toggleButton.Size = UDim2.new(0.9, 0, 0, 30)
+    toggleButton.Position = UDim2.new(0.05, 0, 0, 25)
+    toggleButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    toggleButton.BorderSizePixel = 0
+    toggleButton.Text = "极速旋转"
+    toggleButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    toggleButton.TextSize = 14
+    toggleButton.Font = Enum.Font.Gotham
+    toggleButton.Parent = mainFrame
+    
+    local toggleCorner = Instance.new("UICorner")
+    toggleCorner.CornerRadius = UDim.new(0, 3)
+    toggleCorner.Parent = toggleButton
+    
+    toggleButton.MouseButton1Click:Connect(function()
+        if spinSystem.isSpinning() then
+            spinSystem.stop()
+            toggleButton.Text = "极速旋转"
+            toggleButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+        else
+            spinSystem.start()
+            toggleButton.Text = "停止旋转"
+            toggleButton.BackgroundColor3 = Color3.fromRGB(120, 40, 40)
+        end
+    end)
+    
+    return gui
+end
+
+createDraggableUI()
