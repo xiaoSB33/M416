@@ -185,6 +185,23 @@ function library.new(library, name, theme)
     local UIGradient = Instance.new("UIGradient")
     local UIGradientTitle = Instance.new("UIGradient")
 
+    -- 添加背景图片
+    local BackgroundImage = Instance.new("ImageLabel")
+    BackgroundImage.Name = "BackgroundImage"
+    BackgroundImage.Parent = Main
+    BackgroundImage.AnchorPoint = Vector2.new(0.5, 0.5)
+    BackgroundImage.BackgroundTransparency = 1
+    BackgroundImage.Position = UDim2.new(0.5, 0, 0.5, 0)
+    BackgroundImage.Size = UDim2.new(1, 0, 1, 0)
+    BackgroundImage.Image = "rbxassetid://77423948289875"  -- 使用指定的图片ID
+    BackgroundImage.ScaleType = Enum.ScaleType.Crop
+    BackgroundImage.ZIndex = 0  -- 确保背景在最底层
+
+    -- 为背景图片添加圆角
+    local BackgroundCorner = Instance.new("UICorner")
+    BackgroundCorner.CornerRadius = UDim.new(0, 5)  -- 与主框架相同的圆角
+    BackgroundCorner.Parent = BackgroundImage
+
     if syn and syn.protect_gui then
         syn.protect_gui(dogent)
     end
@@ -206,49 +223,29 @@ function library.new(library, name, theme)
         end
     end
 
-Main.Name = "Main"
-Main.Parent = dogent
-Main.AnchorPoint = Vector2.new(0.5, 0.5)
-Main.BackgroundColor3 = Background
-Main.BackgroundTransparency = 0.2
-Main.BorderColor3 = MainColor
-Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-Main.Size = UDim2.new(0, 572, 0, 353)
-Main.ZIndex = 1
-Main.Active = true
-Main.Draggable = true
-
--- 添加背景图片的代码放在这里
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.Parent = Main
-BackgroundImage.AnchorPoint = Vector2.new(0.5, 0.5)
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, 0, 0.5, 0)
-BackgroundImage.Size = UDim2.new(1, 0, 1, 0)
-BackgroundImage.Image = "rbxassetid://77423948289875"
-BackgroundImage.ScaleType = Enum.ScaleType.Crop
-BackgroundImage.ZIndex = 0
-
-local BackgroundCorner = Instance.new("UICorner")
-BackgroundCorner.CornerRadius = UDim.new(0, 5)
-BackgroundCorner.Parent = BackgroundImage
-
-Main.BackgroundTransparency = 1
-
--- 然后继续其他代码，比如拖动功能等
-services.UserInputService.InputEnded:Connect(
-    function(input)
-        if input.KeyCode == Enum.KeyCode.LeftControl then
-            if Main.Visible == true then
-                Main.Visible = false
-            else
-                Main.Visible = true
+    Main.Name = "Main"
+    Main.Parent = dogent
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+    Main.BackgroundColor3 = Background
+    Main.BackgroundTransparency = 1  -- 设为透明以显示背景图片
+    Main.BorderColor3 = MainColor
+    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Main.Size = UDim2.new(0, 572, 0, 353)
+    Main.ZIndex = 1
+    Main.Active = true
+    Main.Draggable = true
+    services.UserInputService.InputEnded:Connect(
+        function(input)
+            if input.KeyCode == Enum.KeyCode.LeftControl then
+                if Main.Visible == true then
+                    Main.Visible = false
+                else
+                    Main.Visible = true
+                end
             end
         end
-    end
-)
-drag(Main)
+    )
+    drag(Main)
 
     UICornerMain.Parent = Main
     UICornerMain.CornerRadius = UDim.new(0, 3)
@@ -323,7 +320,7 @@ drag(Main)
 
     MainC.CornerRadius = UDim.new(0, 5.5)
     MainC.Name = "MainC"
-    MainC.Parent = Frame
+    MainC.Parent = Main
 
     SB.Name = "SB"
     SB.Parent = Main
@@ -379,6 +376,9 @@ drag(Main)
     ScriptTitle.TextXAlignment = Enum.TextXAlignment.Left
 
     UIGradientTitle.Parent = ScriptTitle
+
+    local function NPLHKB_fake_script()
+        local script = Instance.new("LocalScript", ScriptTitle)
 
     local function NPLHKB_fake_script()
         local script = Instance.new("LocalScript", ScriptTitle)
@@ -505,24 +505,28 @@ drag(Main)
             TabBtns.CanvasSize = UDim2.new(0, 0, 0, TabBtnsL.AbsoluteContentSize.Y + 18)
         end
     )
+    
     Open.Name = "Open"
-Open.Parent = dogent
-Open.BackgroundColor3 = Color3.fromRGB(28, 33, 55)
-Open.BackgroundTransparency = 0 -- 调整按钮的透明度，0为完全不透明，1为完全透明
-Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
-Open.Size = UDim2.new(0, 61, 0, 32)
-Open.Font = Enum.Font.SourceSans
-Open.Text = "隐藏/打开"
-Open.TextColor3 = Color3.fromRGB(255, 255, 255)
-Open.TextTransparency = 0 -- 文字的透明度，0为完全不透明，1为完全透明
-Open.TextSize = 14.000
-Open.Active = true
-Open.Draggable = true
-Open.MouseButton1Click:Connect(function()
-    Main.Visible = not Main.Visible
-end)
+    Open.Parent = dogent
+    Open.BackgroundColor3 = Color3.fromRGB(28, 33, 55)
+    Open.BackgroundTransparency = 0
+    Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
+    Open.Size = UDim2.new(0, 61, 0, 32)
+    Open.Font = Enum.Font.SourceSans
+    Open.Text = "隐藏/打开"
+    Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Open.TextTransparency = 0
+    Open.TextSize = 14.000
+    Open.Active = true
+    Open.Draggable = true
+    Open.MouseButton1Click:Connect(function()
+        Main.Visible = not Main.Visible
+    end)
+    
     UIG.Parent = Open
+    
     local window = {}
+    
     function window.Tab(window, name, icon)
         local Tab = Instance.new("ScrollingFrame")
         local TabIco = Instance.new("ImageLabel")
@@ -599,7 +603,8 @@ end)
         )
 
         local tab = {}
-        function tab.section(tab, name, TabVal)
+        
+        function tab.Section(tab, name, TabVal)
             local Section = Instance.new("Frame")
             local SectionC = Instance.new("UICorner")
             local SectionText = Instance.new("TextLabel")
@@ -694,9 +699,9 @@ end)
             )
 
             local section = {}
+            
             function section.Button(section, text, callback)
-                local callback = callback or function()
-                    end
+                local callback = callback or function() end
 
                 local BtnModule = Instance.new("Frame")
                 local Btn = Instance.new("TextButton")
@@ -748,7 +753,7 @@ end)
                 LabelModule.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 LabelModule.BackgroundTransparency = 1.000
                 LabelModule.BorderSizePixel = 0
-                LabelModule.Position = UDim2.new(0, 0, NAN, 0)
+                LabelModule.Position = UDim2.new(0, 0, 0, 0)
                 LabelModule.Size = UDim2.new(0, 428, 0, 19)
 
                 TextLabel.Parent = LabelModule
@@ -766,8 +771,7 @@ end)
             end
 
             function section.Toggle(section, text, flag, enabled, callback)
-                local callback = callback or function()
-                    end
+                local callback = callback or function() end
                 local enabled = enabled or false
                 assert(text, "No text provided")
                 assert(flag, "No flag provided")
@@ -849,7 +853,7 @@ end)
                 }
 
                 if enabled ~= false then
-                    funcs:SetState(flag, true)
+                    funcs:SetState(true)
                 end
 
                 ToggleBtn.MouseButton1Click:Connect(
@@ -861,8 +865,7 @@ end)
             end
 
             function section.Keybind(section, text, default, callback)
-                local callback = callback or function()
-                    end
+                local callback = callback or function() end
                 assert(text, "No text provided")
                 assert(default, "No default key provided")
 
@@ -992,11 +995,24 @@ end)
                     end
                 )
                 KeybindValue.Size = UDim2.new(0, KeybindValue.TextBounds.X + 30, 0, 28)
+                
+                return {
+                    SetKey = function(self, key)
+                        local keyName = tostring(key)
+                        if banned[keyName] then
+                            return
+                        end
+                        bindKey = Enum.KeyCode[keyName]
+                        KeybindValue.Text = shortNames[keyName] or keyName
+                    end,
+                    GetKey = function(self)
+                        return bindKey
+                    end
+                }
             end
 
             function section.Textbox(section, text, flag, default, callback)
-                local callback = callback or function()
-                    end
+                local callback = callback or function() end
                 assert(text, "No text provided")
                 assert(flag, "No flag provided")
                 assert(default, "No default text provided")
@@ -1074,21 +1090,31 @@ end)
 
                 TextBox.FocusLost:Connect(function()
                     if TextBox.Text == "" then
-                      TextBox.Text = default
+                        TextBox.Text = default
                     end
                     library.flags[flag] = TextBox.Text
                     callback(TextBox.Text)
-                  end)
-          
-                  TextBox:GetPropertyChangedSignal("TextBounds"):Connect(function()
+                end)
+
+                TextBox:GetPropertyChangedSignal("TextBounds"):Connect(function()
                     BoxBG.Size = UDim2.new(0, TextBox.TextBounds.X + 30, 0, 28)
-                  end)
-                  BoxBG.Size = UDim2.new(0, TextBox.TextBounds.X + 30, 0, 28)
-                end
+                end)
+                BoxBG.Size = UDim2.new(0, TextBox.TextBounds.X + 30, 0, 28)
+                
+                return {
+                    SetText = function(self, text)
+                        TextBox.Text = text
+                        library.flags[flag] = text
+                        callback(text)
+                    end,
+                    GetText = function(self)
+                        return TextBox.Text
+                    end
+                }
+            end
 
             function section.Slider(section, text, flag, default, min, max, precise, callback)
-                local callback = callback or function()
-                    end
+                local callback = callback or function() end
                 local min = min or 1
                 local max = max or 10
                 local default = default or min
@@ -1229,6 +1255,9 @@ end)
                         SliderValue.Text = tostring(value)
                         SliderPart.Size = UDim2.new(percent, 0, 1, 0)
                         callback(tonumber(value))
+                    end,
+                    GetValue = function(self)
+                        return library.flags[flag]
                     end
                 }
 
@@ -1346,9 +1375,9 @@ end)
 
                 return funcs
             end
+
             function section.Dropdown(section, text, flag, options, callback)
-                local callback = callback or function()
-                    end
+                local callback = callback or function() end
                 local options = options or {}
                 assert(text, "No text provided")
                 assert(flag, "No flag provided")
@@ -1543,6 +1572,7 @@ end)
 
                 return funcs
             end
+
             return section
         end
         return tab
