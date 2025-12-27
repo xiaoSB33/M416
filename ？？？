@@ -11,6 +11,11 @@ local dragStartPos = nil
 local uiStartPos = nil
 local gui = nil
 local mainFrame = nil
+local isUpPressed = false
+local isDownPressed = false
+local currentHeight = 0
+local isPlayerOnBlock = false
+local playerConnection = nil
 
 local function createDraggableUI()
     gui = Instance.new("ScreenGui")
@@ -106,7 +111,7 @@ local function createDraggableUI()
     titleBar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
     titleBar.BackgroundTransparency = 0.7
     titleBar.BorderSizePixel = 0
-    titleBar.Text = "空云脚本-创造方块飞天"
+    titleBar.Text = "空云脚本-创造方块飞天2.0"
     titleBar.TextColor3 = Color3.fromRGB(200, 200, 200)
     titleBar.TextSize = 16
     titleBar.Font = Enum.Font.Gotham
@@ -116,31 +121,14 @@ local function createDraggableUI()
     titleCorner.CornerRadius = UDim.new(0, 5)
     titleCorner.Parent = titleBar
     
-    local downButton = Instance.new("TextButton")
-    downButton.Name = "Down"
-    downButton.Size = UDim2.new(0.9, 0, 0, 30)
-    downButton.Position = UDim2.new(0.05, 0, 0, 40)
-    downButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-    downButton.BackgroundTransparency = 0.7
-    downButton.BorderSizePixel = 0
-    downButton.Text = "向下生成"
-    downButton.TextColor3 = Color3.fromRGB(200, 200, 200)
-    downButton.TextSize = 14
-    downButton.Font = Enum.Font.Gotham
-    downButton.Parent = mainFrame
-    
-    local downCorner = Instance.new("UICorner")
-    downCorner.CornerRadius = UDim.new(0, 3)
-    downCorner.Parent = downButton
-    
     local parallelButton = Instance.new("TextButton")
     parallelButton.Name = "Parallel"
     parallelButton.Size = UDim2.new(0.9, 0, 0, 30)
-    parallelButton.Position = UDim2.new(0.05, 0, 0, 80)
+    parallelButton.Position = UDim2.new(0.05, 0, 0, 40)
     parallelButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
     parallelButton.BackgroundTransparency = 0.7
     parallelButton.BorderSizePixel = 0
-    parallelButton.Text = "平行生成"
+    parallelButton.Text = "开启飞行"
     parallelButton.TextColor3 = Color3.fromRGB(200, 200, 200)
     parallelButton.TextSize = 14
     parallelButton.Font = Enum.Font.Gotham
@@ -150,10 +138,44 @@ local function createDraggableUI()
     parallelCorner.CornerRadius = UDim.new(0, 3)
     parallelCorner.Parent = parallelButton
     
+    local upButton = Instance.new("TextButton")
+    upButton.Name = "Up"
+    upButton.Size = UDim2.new(0.9, 0, 0, 30)
+    upButton.Position = UDim2.new(0.05, 0, 0, 80)
+    upButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    upButton.BackgroundTransparency = 0.7
+    upButton.BorderSizePixel = 0
+    upButton.Text = "向上一格"
+    upButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    upButton.TextSize = 14
+    upButton.Font = Enum.Font.Gotham
+    upButton.Parent = mainFrame
+    
+    local upCorner = Instance.new("UICorner")
+    upCorner.CornerRadius = UDim.new(0, 3)
+    upCorner.Parent = upButton
+    
+    local downButton = Instance.new("TextButton")
+    downButton.Name = "Down"
+    downButton.Size = UDim2.new(0.9, 0, 0, 30)
+    downButton.Position = UDim2.new(0.05, 0, 0, 120)
+    downButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    downButton.BackgroundTransparency = 0.7
+    downButton.BorderSizePixel = 0
+    downButton.Text = "向下一格"
+    downButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    downButton.TextSize = 14
+    downButton.Font = Enum.Font.Gotham
+    downButton.Parent = mainFrame
+    
+    local downCorner = Instance.new("UICorner")
+    downCorner.CornerRadius = UDim.new(0, 3)
+    downCorner.Parent = downButton
+    
     local clearButton = Instance.new("TextButton")
     clearButton.Name = "Clear"
     clearButton.Size = UDim2.new(0.9, 0, 0, 30)
-    clearButton.Position = UDim2.new(0.05, 0, 0, 120)
+    clearButton.Position = UDim2.new(0.05, 0, 0, 160)
     clearButton.BackgroundColor3 = Color3.fromRGB(120, 40, 40)
     clearButton.BackgroundTransparency = 0.7
     clearButton.BorderSizePixel = 0
@@ -170,7 +192,7 @@ local function createDraggableUI()
     local exitButton = Instance.new("TextButton")
     exitButton.Name = "Exit"
     exitButton.Size = UDim2.new(0.9, 0, 0, 30)
-    exitButton.Position = UDim2.new(0.05, 0, 0, 150)
+    exitButton.Position = UDim2.new(0.05, 0, 0, 200)
     exitButton.BackgroundColor3 = Color3.fromRGB(80, 40, 40)
     exitButton.BackgroundTransparency = 0.7
     exitButton.BorderSizePixel = 0
@@ -187,7 +209,7 @@ local function createDraggableUI()
     local status = Instance.new("TextLabel")
     status.Name = "Status"
     status.Size = UDim2.new(1, 0, 0, 20)
-    status.Position = UDim2.new(0, 0, 0, 180)
+    status.Position = UDim2.new(0, 0, 0, 240)
     status.BackgroundTransparency = 1
     status.Text = "就绪"
     status.TextColor3 = Color3.fromRGB(150, 150, 150)
@@ -195,31 +217,81 @@ local function createDraggableUI()
     status.Font = Enum.Font.Gotham
     status.Parent = gui
     
-    downButton.MouseButton1Click:Connect(function()
-        local character = player.Character
-        if not character then return end
+    -- 确保玩家站在方块上
+    local function ensurePlayerOnBlock()
+        if not followBlock then return end
         
-        local rootPart = character:FindFirstChild("HumanoidRootPart")
-        if not rootPart then return end
+        if playerConnection then
+            playerConnection:Disconnect()
+        end
         
-        local block = Instance.new("Part")
-        block.Name = "BuildBlock"
-        block.Anchored = true
-        block.CanCollide = true
-        block.Transparency = 0.5
-        block.BrickColor = BrickColor.new("Bright green")
-        block.Size = Vector3.new(4, 1, 4)
-        block.Material = Enum.Material.SmoothPlastic
-        block.Parent = workspace
-        
-        block.Position = Vector3.new(
-            rootPart.Position.X,
-            rootPart.Position.Y - 5,
-            rootPart.Position.Z
-        )
-        
-        table.insert(blocks, block)
-        status.Text = "向下生成完成"
+        playerConnection = runService.Heartbeat:Connect(function()
+            if not followBlock or not followBlock.Parent then
+                if playerConnection then
+                    playerConnection:Disconnect()
+                end
+                return
+            end
+            
+            local character = player.Character
+            if not character then return end
+            
+            local rootPart = character:FindFirstChild("HumanoidRootPart")
+            if not rootPart then return end
+            
+            -- 将玩家固定在方块上
+            rootPart.CFrame = CFrame.new(
+                followBlock.Position.X,
+                followBlock.Position.Y + 3,  -- 玩家站在方块上方
+                followBlock.Position.Z
+            )
+        end)
+    end
+    
+    -- 向上按钮长按检测
+    upButton.MouseButton1Down:Connect(function()
+        isUpPressed = true
+        local connection
+        connection = runService.Heartbeat:Connect(function()
+            if not isUpPressed or not followBlock then
+                if connection then
+                    connection:Disconnect()
+                end
+                return
+            end
+            currentHeight = currentHeight + 0.5
+        end)
+    end)
+    
+    upButton.MouseButton1Up:Connect(function()
+        isUpPressed = false
+    end)
+    
+    upButton.MouseLeave:Connect(function()
+        isUpPressed = false
+    end)
+    
+    -- 向下按钮长按检测
+    downButton.MouseButton1Down:Connect(function()
+        isDownPressed = true
+        local connection
+        connection = runService.Heartbeat:Connect(function()
+            if not isDownPressed or not followBlock then
+                if connection then
+                    connection:Disconnect()
+                end
+                return
+            end
+            currentHeight = currentHeight - 0.5
+        end)
+    end)
+    
+    downButton.MouseButton1Up:Connect(function()
+        isDownPressed = false
+    end)
+    
+    downButton.MouseLeave:Connect(function()
+        isDownPressed = false
     end)
     
     parallelButton.MouseButton1Click:Connect(function()
@@ -234,13 +306,17 @@ local function createDraggableUI()
                 followConnection:Disconnect()
                 followConnection = nil
             end
+            if playerConnection then
+                playerConnection:Disconnect()
+                playerConnection = nil
+            end
             followBlock:Destroy()
             followBlock = nil
-            status.Text = "平行生成已关闭"
+            status.Text = " "
             return
         end
         
-        local initialHeight = rootPart.Position.Y - 3
+        currentHeight = rootPart.Position.Y - 3
         
         followBlock = Instance.new("Part")
         followBlock.Name = "FollowBlock"
@@ -248,17 +324,24 @@ local function createDraggableUI()
         followBlock.CanCollide = true
         followBlock.Transparency = 0.7
         followBlock.BrickColor = BrickColor.new("Bright yellow")
-        followBlock.Size = Vector3.new(4, 1, 4)
+        followBlock.Size = Vector3.new(10, 1, 10)  -- 增大方块尺寸
         followBlock.Material = Enum.Material.SmoothPlastic
         followBlock.Parent = workspace
         
         table.insert(blocks, followBlock)
+        
+        -- 确保玩家站在方块上
+        ensurePlayerOnBlock()
         
         followConnection = runService.Heartbeat:Connect(function()
             if not character or not character.Parent then
                 if followConnection then
                     followConnection:Disconnect()
                     followConnection = nil
+                end
+                if playerConnection then
+                    playerConnection:Disconnect()
+                    playerConnection = nil
                 end
                 if followBlock then
                     followBlock:Destroy()
@@ -272,12 +355,12 @@ local function createDraggableUI()
             
             followBlock.Position = Vector3.new(
                 rootPart.Position.X,
-                initialHeight,
+                currentHeight,
                 rootPart.Position.Z
             )
         end)
         
-        status.Text = "平行生成已开启"
+        status.Text = " "
     end)
     
     clearButton.MouseButton1Click:Connect(function()
@@ -292,18 +375,24 @@ local function createDraggableUI()
             followConnection = nil
         end
         
+        if playerConnection then
+            playerConnection:Disconnect()
+            playerConnection = nil
+        end
+        
         if followBlock then
             followBlock:Destroy()
             followBlock = nil
         end
         
         blocks = {}
-        status.Text = "所有方块已清除"
+        currentHeight = 0
+        status.Text = " "
     end)
     
     exitButton.MouseButton1Click:Connect(function()
         mainFrame.Visible = false
-        status.Text = "UI已隐藏"
+        status.Text = " "
     end)
     
     userInputService.InputBegan:Connect(function(input, gameProcessed)
@@ -312,9 +401,9 @@ local function createDraggableUI()
         if input.KeyCode == Enum.KeyCode.Insert then
             mainFrame.Visible = not mainFrame.Visible
             if mainFrame.Visible then
-                status.Text = "UI已显示"
+                status.Text = " "
             else
-                status.Text = "UI已隐藏"
+                status.Text = " "
             end
         end
     end)
