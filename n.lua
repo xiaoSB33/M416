@@ -206,28 +206,49 @@ function library.new(library, name, theme)
         end
     end
 
-    Main.Name = "Main"
-    Main.Parent = dogent
-    Main.AnchorPoint = Vector2.new(0.5, 0.5)
-    Main.BackgroundColor3 = Background
-    Main.BorderColor3 = MainColor
-    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Main.Size = UDim2.new(0, 572, 0, 353)
-    Main.ZIndex = 1
-    Main.Active = true
-    Main.Draggable = true
-    services.UserInputService.InputEnded:Connect(
-        function(input)
-            if input.KeyCode == Enum.KeyCode.LeftControl then
-                if Main.Visible == true then
-                    Main.Visible = false
-                else
-                    Main.Visible = true
-                end
+Main.Name = "Main"
+Main.Parent = dogent
+Main.AnchorPoint = Vector2.new(0.5, 0.5)
+Main.BackgroundColor3 = Background
+Main.BackgroundTransparency = 0.2
+Main.BorderColor3 = MainColor
+Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+Main.Size = UDim2.new(0, 572, 0, 353)
+Main.ZIndex = 1
+Main.Active = true
+Main.Draggable = true
+
+-- 添加背景图片的代码放在这里
+local BackgroundImage = Instance.new("ImageLabel")
+BackgroundImage.Name = "BackgroundImage"
+BackgroundImage.Parent = Main
+BackgroundImage.AnchorPoint = Vector2.new(0.5, 0.5)
+BackgroundImage.BackgroundTransparency = 1
+BackgroundImage.Position = UDim2.new(0.5, 0, 0.5, 0)
+BackgroundImage.Size = UDim2.new(1, 0, 1, 0)
+BackgroundImage.Image = "rbxassetid://77423948289875"
+BackgroundImage.ScaleType = Enum.ScaleType.Crop
+BackgroundImage.ZIndex = 0
+
+local BackgroundCorner = Instance.new("UICorner")
+BackgroundCorner.CornerRadius = UDim.new(0, 5)
+BackgroundCorner.Parent = BackgroundImage
+
+Main.BackgroundTransparency = 1
+
+-- 然后继续其他代码，比如拖动功能等
+services.UserInputService.InputEnded:Connect(
+    function(input)
+        if input.KeyCode == Enum.KeyCode.LeftControl then
+            if Main.Visible == true then
+                Main.Visible = false
+            else
+                Main.Visible = true
             end
         end
-    )
-    drag(Main)
+    end
+)
+drag(Main)
 
     UICornerMain.Parent = Main
     UICornerMain.CornerRadius = UDim.new(0, 3)
