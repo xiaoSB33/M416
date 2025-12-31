@@ -26,7 +26,7 @@ function Ripple(pu9)
         v10.BackgroundColor3 = Color3.fromRGB(135, 206, 235)
         v10.BackgroundTransparency = 1
         v10.ZIndex = 8
-        v10.Image = "rbxassetid://123097590035361"
+        v10.Image = "rbxassetid://98541457845136"
         v10.ImageTransparency = 0.8
         v10.ScaleType = Enum.ScaleType.Fit
         v10.ImageColor3 = Color3.fromRGB(135, 206, 235)
@@ -241,7 +241,7 @@ function vu1.new(pu27, p28, p29)
     v50.Position = UDim2.new(0.5, 0, 0.5, 0)
     v50.Size = UDim2.new(1, - 10, 1, - 10)
     v50.ZIndex = - 1
-    v50.Image = "rbxassetid://118534129318519"
+    v50.Image = "rbxassetid://98541457845136"
     v50.ImageColor3 = Color3.fromRGB(255, 255, 255)
     v50.SliceCenter = Rect.new(49, 49, 450, 450)
     local v59 = Instance.new("ImageLabel")
@@ -472,10 +472,10 @@ function vu1.new(pu27, p28, p29)
     vu47.Size = UDim2.new(0, 50, 0, 50)
     vu47.Active = true
     vu47.Draggable = true
-    vu47.Image = "rbxassetid://123097590035361"
+    vu47.Image = "rbxassetid://98541457845136"
     vu47.MouseButton1Click:Connect(function()
         vu36.Visible = not vu36.Visible
-        vu47.Image = vu36.Visible and "rbxassetid://125169554049330" or "rbxassetid://78614661389908"
+        vu47.Image = vu36.Visible and "rbxassetid://98541457845136" or "rbxassetid://78614661389908"
     end)
     v56.CornerRadius = UDim.new(0, 90)
     v56.Parent = vu47
@@ -500,7 +500,7 @@ function vu1.new(pu27, p28, p29)
             vu77.BackgroundTransparency = 1
             vu77.BorderSizePixel = 0
             vu77.Size = UDim2.new(0, 24, 0, 24)
-            local v81 = "rbxassetid://123097590035361"
+            local v81 = "rbxassetid://98541457845136"
             if v81 then
                 p75 = v81
             elseif p75 then
