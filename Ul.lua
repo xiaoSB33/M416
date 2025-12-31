@@ -26,7 +26,7 @@ function Ripple(pu9)
         v10.BackgroundColor3 = Color3.fromRGB(135, 206, 235)
         v10.BackgroundTransparency = 1
         v10.ZIndex = 8
-        v10.Image = "rbxassetid://81503152709972"
+        v10.Image = "rbxassetid://123097590035361"
         v10.ImageTransparency = 0.8
         v10.ScaleType = Enum.ScaleType.Fit
         v10.ImageColor3 = Color3.fromRGB(135, 206, 235)
@@ -199,7 +199,7 @@ function vu1.new(pu27, p28, p29)
     vu36.ZIndex = 1
     vu36.Active = true
     vu36.Draggable = true
-    vu36.Transparency = 1
+    vu36.Transparency = 0
     vu4.UserInputService.InputEnded:Connect(function(p57)
         if p57.KeyCode == Enum.KeyCode.LeftControl then
             if vu36.Visible ~= true then
@@ -241,12 +241,12 @@ function vu1.new(pu27, p28, p29)
     v50.Position = UDim2.new(0.5, 0, 0.5, 0)
     v50.Size = UDim2.new(1, - 10, 1, - 10)
     v50.ZIndex = - 1
-    v50.Image = "rbxassetid://81503152709972"
+    v50.Image = "rbxassetid://118534129318519"
     v50.ImageColor3 = Color3.fromRGB(255, 255, 255)
     v50.SliceCenter = Rect.new(49, 49, 450, 450)
     local v59 = Instance.new("ImageLabel")
     v59.Name = "BackgroundImage"
-    v59.Image = "rbxassetid://81503152709972ID"
+    v59.Image = "rbxassetid://\228\189\160\231\154\132\229\155\190\231\137\135ID"
     v59.Size = UDim2.new(1, 0, 1, 0)
     v59.BackgroundTransparency = 0
     v59.ZIndex = - 1
@@ -469,10 +469,10 @@ function vu1.new(pu27, p28, p29)
     vu47.Size = UDim2.new(0, 50, 0, 50)
     vu47.Active = true
     vu47.Draggable = true
-    vu47.Image = "rbxassetid://81503152709972"
+    vu47.Image = "rbxassetid://123097590035361"
     vu47.MouseButton1Click:Connect(function()
         vu36.Visible = not vu36.Visible
-        vu47.Image = vu36.Visible and "rbxassetid://81503152709972" or "rbxassetid://81503152709972"
+        vu47.Image = vu36.Visible and "rbxassetid://125169554049330" or "rbxassetid://78614661389908"
     end)
     v56.CornerRadius = UDim.new(0, 90)
     v56.Parent = vu47
@@ -497,7 +497,7 @@ function vu1.new(pu27, p28, p29)
             vu77.BackgroundTransparency = 1
             vu77.BorderSizePixel = 0
             vu77.Size = UDim2.new(0, 24, 0, 24)
-            local v81 = "rbxassetid://81503152709972"
+            local v81 = "rbxassetid://123097590035361"
             if v81 then
                 p75 = v81
             elseif p75 then
@@ -592,13 +592,13 @@ function vu1.new(pu27, p28, p29)
                     vu89.BorderSizePixel = 0
                     vu89.Position = UDim2.new(0, - 33, 0, 5)
                     vu89.Size = UDim2.new(0, 26, 0, 26)
-                    vu89.Image = "rbxassetid://81503152709972"
+                    vu89.Image = "rbxassetid://123097590035361"
                     vu90.Name = "SectionOpened"
                     vu90.Parent = vu89
                     vu90.BackgroundTransparency = 1
                     vu90.BorderSizePixel = 0
                     vu90.Size = UDim2.new(0, 26, 0, 26)
-                    vu90.Image = "rbxassetid://81503152709972"
+                    vu90.Image = "rbxassetid://123097590035361"
                     vu90.ImageTransparency = 1
                     v91.Name = "SectionToggle"
                     v91.Parent = vu89
