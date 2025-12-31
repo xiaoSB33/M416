@@ -249,8 +249,8 @@ function vu1.new(pu27, p28, p29)
     v59.Image = "rbxassetid://81503152709972"  -- 修正为正确的图片ID
     v59.Size = UDim2.new(1, 0, 1, 0)
     v59.Position = UDim2.new(0, 0, 0, 0)  -- 确保位置正确
-    v59.BackgroundTransparency = 1  -- 背景透明
-    v59.ImageTransparency = 0  -- 图片不透明
+    v59.BackgroundTransparency = 10  -- 背景透明
+    v59.ImageTransparency = 1  -- 图片不透明
     v59.ZIndex = 0  -- 调整为有效ZIndex
     v59.ScaleType = Enum.ScaleType.Crop  -- 添加缩放类型
     v59.Parent = vu36
