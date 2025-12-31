@@ -294,7 +294,7 @@ function vu1.new(pu27, p28, p29)
     vu37.BackgroundTransparency = 1
     vu37.Position = UDim2.new(0.217000037, 0, 0, 3)
     vu37.Size = UDim2.new(0, 448, 0, 353)
-    vu37.Transparency = 1
+    vu37.Transparency = 50
     v38.CornerRadius = UDim.new(0, 5.5)
     v38.Name = "MainC"
     v38.Parent = v54
