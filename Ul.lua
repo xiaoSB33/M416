@@ -241,7 +241,7 @@ function vu1.new(pu27, p28, p29)
     v50.Position = UDim2.new(0.5, 0, 0.5, 0)
     v50.Size = UDim2.new(1, - 10, 1, - 10)
     v50.ZIndex = - 1
-    v50.Image = "rbxassetid://98541457845136"
+    v50.Image = "rbxassetid://118534129318519"
     v50.ImageColor3 = Color3.fromRGB(255, 255, 255)
     v50.SliceCenter = Rect.new(49, 49, 450, 450)
     local v59 = Instance.new("ImageLabel")
@@ -475,7 +475,7 @@ function vu1.new(pu27, p28, p29)
     vu47.Image = "rbxassetid://98541457845136"
     vu47.MouseButton1Click:Connect(function()
         vu36.Visible = not vu36.Visible
-        vu47.Image = vu36.Visible and "rbxassetid://98541457845136" or "rbxassetid://78614661389908"
+        vu47.Image = vu36.Visible and "rbxassetid://125169554049330" or "rbxassetid://78614661389908"
     end)
     v56.CornerRadius = UDim.new(0, 90)
     v56.Parent = vu47
