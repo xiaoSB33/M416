@@ -199,7 +199,7 @@ function vu1.new(pu27, p28, p29)
     vu36.ZIndex = 1
     vu36.Active = true
     vu36.Draggable = true
-    vu36.Transparency = 999
+    vu36.Transparency = 1
     vu4.UserInputService.InputEnded:Connect(function(p57)
         if p57.KeyCode == Enum.KeyCode.LeftControl then
             if vu36.Visible ~= true then
@@ -244,13 +244,17 @@ function vu1.new(pu27, p28, p29)
     v50.Image = "rbxassetid://118534129318519"
     v50.ImageColor3 = Color3.fromRGB(255, 255, 255)
     v50.SliceCenter = Rect.new(49, 49, 450, 450)
-    local v59 = Instance.new("ImageLabel")
-    v59.Name = "BackgroundImage"
-    v59.Image = "rbxassetid://\228\189\160\231\154\132\229\155\190\231\137\135ID"
-    v59.Size = UDim2.new(1, 0, 1, 0)
-    v59.BackgroundTransparency = 0
-    v59.ZIndex = - 1
-    v59.Parent = vu36
+    local  = Instance.new("ImageLabel")
+       -- 创建背景图片
+   local v59 = Instance.new("ImageLabel")
+   v59.Parent = vu36
+   v59.Name = "BackgroundImage"
+   v59.ZIndex = 0  -- 确保在最底层
+   v59.BackgroundTransparency = 1
+   v59.Size = UDim2.new(1, 0, 1, 0)
+   v59.Image = "rbxassetid://81503152709972"
+   v59.ScaleType = Enum.ScaleType.Crop  -- 或者适应，根据需求
+   v59.TileSize = UDim2.new(0, 100, 0, 100)
     local v60 = Instance.new("UICorner")
     v60.CornerRadius = UDim.new(0, 10)
     v60.Parent = v59
