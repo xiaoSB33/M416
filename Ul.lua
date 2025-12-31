@@ -199,7 +199,7 @@ function vu1.new(pu27, p28, p29)
     vu36.ZIndex = 1
     vu36.Active = true
     vu36.Draggable = true
-    vu36.Transparency = 0
+    vu36.Transparency = 999
     vu4.UserInputService.InputEnded:Connect(function(p57)
         if p57.KeyCode == Enum.KeyCode.LeftControl then
             if vu36.Visible ~= true then
