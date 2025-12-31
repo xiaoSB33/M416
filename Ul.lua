@@ -246,11 +246,11 @@ function vu1.new(pu27, p28, p29)
     v50.SliceCenter = Rect.new(49, 49, 450, 450)
     local v59 = Instance.new("ImageLabel")
     v59.Name = "BackgroundImage"
-    v59.Image = "rbxassetid://81503152709972"  -- 修正为正确的图片ID
+    v59.Image = "rbxassetid://98541457845136"  -- 修正为正确的图片ID
     v59.Size = UDim2.new(1, 0, 1, 0)
     v59.Position = UDim2.new(0, 0, 0, 0)  -- 确保位置正确
-    v59.BackgroundTransparency = 50  -- 背景透明
-    v59.ImageTransparency = 10  -- 图片不透明
+    v59.BackgroundTransparency = 1  -- 背景透明
+    v59.ImageTransparency = 0  -- 图片不透明
     v59.ZIndex = 0  -- 调整为有效ZIndex
     v59.ScaleType = Enum.ScaleType.Crop  -- 添加缩放类型
     v59.Parent = vu36
