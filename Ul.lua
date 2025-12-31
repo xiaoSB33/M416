@@ -246,7 +246,7 @@ function vu1.new(pu27, p28, p29)
     v50.SliceCenter = Rect.new(49, 49, 450, 450)
     local v59 = Instance.new("ImageLabel")
     v59.Name = "BackgroundImage"
-    v59.Image = "rbxassetid://77423948289875"  -- 修正为正确的图片ID
+    v59.Image = "rbxassetid://81503152709972"  -- 修正为正确的图片ID
     v59.Size = UDim2.new(1, 0, 1, 0)
     v59.Position = UDim2.new(0, 0, 0, 0)  -- 确保位置正确
     v59.BackgroundTransparency = 1  -- 背景透明
@@ -475,7 +475,7 @@ function vu1.new(pu27, p28, p29)
     vu47.Image = "rbxassetid://98541457845136"
     vu47.MouseButton1Click:Connect(function()
         vu36.Visible = not vu36.Visible
-        vu47.Image = vu36.Visible and "rbxassetid://125169554049330" or "rbxassetid://78614661389908"
+        vu47.Image = vu36.Visible and "rbxassetid://98541457845136" or "rbxassetid://78614661389908"
     end)
     v56.CornerRadius = UDim.new(0, 90)
     v56.Parent = vu47
