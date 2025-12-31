@@ -475,7 +475,7 @@ function vu1.new(pu27, p28, p29)
     vu47.Image = "rbxassetid://98541457845136"
     vu47.MouseButton1Click:Connect(function()
         vu36.Visible = not vu36.Visible
-        vu47.Image = vu36.Visible and "rbxassetid://98541457845136" or "rbxassetid://78614661389908"
+        vu47.Image = vu36.Visible and "rbxassetid://98541457845136" or "rbxassetid://98541457845136"
     end)
     v56.CornerRadius = UDim.new(0, 90)
     v56.Parent = vu47
@@ -555,7 +555,7 @@ function vu1.new(pu27, p28, p29)
                 vu76.CanvasSize = UDim2.new(0, 0, 0, vu80.AbsoluteContentSize.Y + 8)
             end)
             local v83 = Instance.new("Sound")
-            v83.SoundId = "rbxassetid://6797864253"
+            v83.SoundId = "rbxassetid://98541457845136"
             v83.Parent = game.Workspace
             v83:Play()
             return {
