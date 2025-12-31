@@ -595,13 +595,13 @@ function vu1.new(pu27, p28, p29)
                     vu89.BorderSizePixel = 0
                     vu89.Position = UDim2.new(0, - 33, 0, 5)
                     vu89.Size = UDim2.new(0, 26, 0, 26)
-                    vu89.Image = "rbxassetid://123097590035361"
+                    vu89.Image = "rbxassetid://98541457845136"
                     vu90.Name = "SectionOpened"
                     vu90.Parent = vu89
                     vu90.BackgroundTransparency = 1
                     vu90.BorderSizePixel = 0
                     vu90.Size = UDim2.new(0, 26, 0, 26)
-                    vu90.Image = "rbxassetid://123097590035361"
+                    vu90.Image = "rbxassetid://98541457845136"
                     vu90.ImageTransparency = 1
                     v91.Name = "SectionToggle"
                     v91.Parent = vu89
