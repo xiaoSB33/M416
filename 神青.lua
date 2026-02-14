@@ -1,23 +1,17 @@
---[[
-我也就这样罢了，竟然出来了就公开吧，也供新手缝吧
---[[
-by 神青
-]]
 
-local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/odhdshhe/lenglengui/refs/heads/main/JMJMUI.lua"))()        
-local win = ui:new("神青脚本中心V5")
+ local Version = "1.6.41"
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/download/" .. Version .. "/main.lua"))()
+
 --
 local UITab84 = win:Tab("信息",'16060333448')
 
 local about = UITab84:section("『介绍』",true)
-about:Label("神青脚本")
+about:Label("江脚本")
 about:Label("永久免费")
 about:Label("拒绝倒卖")
-about:Label("作者：神青")
-about:Label("师傅叶")
-about:Label("感谢鹤，我的老朋友")
+about:Label("作者：江暖阳")
+about:Label("师傅小徐")
 about:Label("感谢支持我的人")
-about:Label("感谢叶和鹤，没有你们就没有现在的我")
 about:Label("本脚本为V5版本")
 about:Label("已支持俄亥俄州")
 about:Button("点我复制作者QQ",function()
@@ -25,11 +19,7 @@ about:Button("点我复制作者QQ",function()
 end)
 
 about:Button("点我复制神青脚本官方群",function()
-    setclipboard("1003591865")
-end)
-
-about:Button("点我复制神青脚本二群",function()
-    setclipboard("1015840930")
+    setclipboard("1062967540")
 end)
 
 local about = UITab84:section("『介绍』",true)
@@ -194,7 +184,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Size = UDim2.new(1.00234735, 0, 1.08253634, 0)
 TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "神青自瞄"
+TextLabel.Text = "自瞄"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 16.000
 
